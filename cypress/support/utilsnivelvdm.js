@@ -334,3 +334,57 @@ Cypress.Commands.add('confirmarFinalizacaoVdm', () => {
 
     cy.wait(1000);
 });
+// EDITAR MAIS RECENTE
+Cypress.Commands.add('editarUltimoNivelVdm', () => {
+    const valor = Cypress._.random(1, 9);
+    cy.log(`Editando Nível VDM com valor: ${valor}`);
+
+    cy.get('a[aria-roledescription="dialog link"]')
+        .last()
+        .should('be.visible')
+        .click({ force: true });
+
+    cy.wait(1500);
+
+    cy.getNivelVdmFrame().then(($frame) => {
+        cy.wrap($frame)
+            .find('tr.a-GV-row[data-rownum="1"]')
+            .find('td.a-GV-cell')
+            .eq(3)
+            .dblclick({ force: true });
+
+        cy.wrap($frame)
+            .find('tr.a-GV-row[data-rownum="1"]')
+            .find('td.a-GV-cell')
+            .eq(3)
+            .find('input, textarea', { timeout: 10000 })
+            .should('be.visible')
+            .first()
+            .clear({ force: true })
+            .type(valor, { delay: 30 });
+
+        cy.wrap($frame)
+            .find('tr.a-GV-row[data-rownum="1"]')
+            .find('td.a-GV-cell')
+            .eq(3)
+            .type('{enter}', { force: true });
+    });
+
+    cy.wait(1000);
+
+    cy.get('iframe', { timeout: 30000 })
+        .its('0.contentDocument.body')
+        .then(cy.wrap)
+        .find('button[data-action="save"]')
+        .should('be.visible')
+        .click({ force: true });
+
+    cy.wait(2000);
+
+    cy.get('button.ui-dialog-titlebar-close, button[title="Close"]')
+        .last()
+        .should('be.visible')
+        .click({ force: true });
+
+    cy.wait(1000);
+});

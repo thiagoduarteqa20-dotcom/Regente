@@ -253,20 +253,19 @@ Cypress.Commands.add('confirmarFinalizacaoIcp', () => {
 });
 // EDITAR MAIS RECENTE
 Cypress.Commands.add('editarUltimoNivelIcp', () => {
-    cy.log('Clicando no botão de editar do registro mais recente...');
+    const valor = Cypress._.random(1, 9);
+    cy.log(`Editando Nível ICP com valor: ${valor}`);
     cy.get('a[aria-roledescription="dialog link"]')
         .last()
         .should('be.visible')
         .click({ force: true });
     cy.wait(1500);
-    cy.log('Modificando a primeira célula (de 0 para 1) com duplo clique...');
     cy.getNivelIcpFrame().then(($frame) => {
-        const $celulaMin = cy.wrap($frame)
+        cy.wrap($frame)
             .find('tr.a-GV-row[data-rownum="1"]')
             .find('td.a-GV-cell')
             .eq(3)
-            .should('exist');
-        $celulaMin.dblclick({ force: true });
+            .dblclick({ force: true });
         cy.wrap($frame)
             .find('tr.a-GV-row[data-rownum="1"]')
             .find('td.a-GV-cell')
@@ -275,7 +274,7 @@ Cypress.Commands.add('editarUltimoNivelIcp', () => {
             .should('be.visible')
             .first()
             .clear({ force: true })
-            .type('1', { delay: 30 });
+            .type(valor, { delay: 30 });
         cy.wrap($frame)
             .find('tr.a-GV-row[data-rownum="1"]')
             .find('td.a-GV-cell')
@@ -283,7 +282,6 @@ Cypress.Commands.add('editarUltimoNivelIcp', () => {
             .type('{enter}', { force: true });
     });
     cy.wait(1000);
-    cy.log('Salvando alterações...');
     cy.get('iframe', { timeout: 30000 })
         .its('0.contentDocument.body')
         .then(cy.wrap)
@@ -291,7 +289,6 @@ Cypress.Commands.add('editarUltimoNivelIcp', () => {
         .should('be.visible')
         .click({ force: true });
     cy.wait(2000);
-    cy.log('Fechando aba do modal...');
     cy.get('button.ui-dialog-titlebar-close, button[title="Close"]')
         .last()
         .should('be.visible')

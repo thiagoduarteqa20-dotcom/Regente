@@ -14,7 +14,6 @@ describe('Smoke Test - ICP Conceitual', () => {
                 nome: true,
                 prefixo: 'ICP_CONCEITUAL_NOVO'
             }).then((dados) => {
-
                 cy.abrirCriarIcpConceitual();
                 cy.clicarCriarModeloNovoIcpConceitual();
                 cy.preencherNomeIcpConceitualNovo(dados.nome);
@@ -23,7 +22,6 @@ describe('Smoke Test - ICP Conceitual', () => {
                 cy.proximoIcpConceitual();
                 cy.finalizarIcpConceitual();
                 cy.confirmarFinalizacaoIcpConceitual();
-
             });
         });
 
@@ -34,7 +32,6 @@ describe('Smoke Test - ICP Conceitual', () => {
                 nome: true,
                 prefixo: 'ICP_CONCEITUAL'
             }).then((dados) => {
-
                 cy.abrirCriarIcpConceitual();
                 cy.clicarUtilizarModeloIcpConceitual();
                 cy.preencherNomeIcpConceitual(dados.nome);
@@ -44,8 +41,12 @@ describe('Smoke Test - ICP Conceitual', () => {
                 cy.proximoIcpConceitual();
                 cy.finalizarIcpConceitual();
                 cy.confirmarFinalizacaoIcpConceitual();
-
             });
+        });
+
+        it('Editar ICP Conceitual - Alterar valor da célula', () => {
+            cy.acessarIcpConceitual();
+            cy.editarUltimoIcpConceitual();
         });
 
     });
