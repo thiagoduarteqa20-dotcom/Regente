@@ -437,9 +437,7 @@ Cypress.Commands.add('editarUltimoNivelIdade', () => {
                 .find('tr.a-GV-row[data-rownum="1"]')
                 .find('td.a-GV-cell')
                 .eq(3)
-                .find('input, textarea', {
-                    timeout: 10000
-                })
+                .find('input, textarea', { timeout: 10000 })
                 .should('be.visible')
                 .first()
                 .clear({ force: true })

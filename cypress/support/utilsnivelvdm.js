@@ -337,6 +337,7 @@ Cypress.Commands.add('confirmarFinalizacaoVdm', () => {
 // EDITAR MAIS RECENTE
 Cypress.Commands.add('editarUltimoNivelVdm', () => {
     const valor = Cypress._.random(1, 9);
+
     cy.log(`Editando Nível VDM com valor: ${valor}`);
 
     cy.get('a[aria-roledescription="dialog link"]')
@@ -344,31 +345,47 @@ Cypress.Commands.add('editarUltimoNivelVdm', () => {
         .should('be.visible')
         .click({ force: true });
 
-    cy.wait(1500);
+    cy.wait(2000);
 
-    cy.getNivelVdmFrame().then(($frame) => {
-        cy.wrap($frame)
-            .find('tr.a-GV-row[data-rownum="1"]')
-            .find('td.a-GV-cell')
-            .eq(3)
-            .dblclick({ force: true });
+    // Ajusta o tamanho do modal para o botão Salvar ficar acessível
+    cy.get('.ui-dialog', { timeout: 10000 })
+        .then(($dialog) => {
+            if ($dialog.length) {
+                cy.wrap($dialog).invoke('css', 'width', '90vw');
+                cy.wrap($dialog).invoke('css', 'height', '85vh');
+                cy.wrap($dialog).invoke('css', 'top', '5vh');
+                cy.wrap($dialog).invoke('css', 'left', '5vw');
+            }
+        });
 
-        cy.wrap($frame)
-            .find('tr.a-GV-row[data-rownum="1"]')
-            .find('td.a-GV-cell')
-            .eq(3)
-            .find('input, textarea', { timeout: 10000 })
-            .should('be.visible')
-            .first()
-            .clear({ force: true })
-            .type(valor, { delay: 30 });
+    cy.wait(1000);
 
-        cy.wrap($frame)
-            .find('tr.a-GV-row[data-rownum="1"]')
-            .find('td.a-GV-cell')
-            .eq(3)
-            .type('{enter}', { force: true });
-    });
+    cy.getNivelVdmFrame()
+        .then(($frame) => {
+            const $celulaMin = cy.wrap($frame)
+                .find('tr.a-GV-row[data-rownum="1"]')
+                .find('td.a-GV-cell')
+                .eq(3)
+                .should('exist');
+
+            $celulaMin.dblclick({ force: true });
+
+            cy.wrap($frame)
+                .find('tr.a-GV-row[data-rownum="1"]')
+                .find('td.a-GV-cell')
+                .eq(3)
+                .find('input, textarea', { timeout: 10000 })
+                .should('be.visible')
+                .first()
+                .clear({ force: true })
+                .type(valor, { delay: 30 });
+
+            cy.wrap($frame)
+                .find('tr.a-GV-row[data-rownum="1"]')
+                .find('td.a-GV-cell')
+                .eq(3)
+                .type('{enter}', { force: true });
+        });
 
     cy.wait(1000);
 
@@ -377,6 +394,7 @@ Cypress.Commands.add('editarUltimoNivelVdm', () => {
         .then(cy.wrap)
         .find('button[data-action="save"]')
         .should('be.visible')
+        .scrollIntoView()
         .click({ force: true });
 
     cy.wait(2000);

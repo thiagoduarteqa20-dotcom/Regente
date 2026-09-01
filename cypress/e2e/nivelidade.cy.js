@@ -46,7 +46,7 @@ describe('Smoke Test - Nivel Idade', () => {
             });
         });
 
-        it('Editar Nível Idade - Alterar valor da célula para 16', () => {
+        it('Editar Nível Idade - Alterar valor da célula', () => {
             cy.acessarNivelIdade();
             cy.editarUltimoNivelIdade();
         });

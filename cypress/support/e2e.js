@@ -18,3 +18,6 @@ import './utilsnivelvdm'
 
 //icp conceitual
 import './utilsconceitual'
+
+//matriz
+import './utilsmatrizicp'
