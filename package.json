@@ -1,0 +1,17 @@
+{
+  "name": "regente_automacao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open",
+    "testRun": "npx cypress run"
+  },
+  "keywords": [],
+  "author": "Tiago Duarte",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^15.17.0"
+  }
+}
