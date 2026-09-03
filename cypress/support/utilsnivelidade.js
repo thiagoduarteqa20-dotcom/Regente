@@ -234,6 +234,7 @@ Cypress.Commands.add('preencherValoresIntervaloIdade', () => {
                 .type('{enter}', { force: true });
 
             cy.wait(500);
+            cy.printPasso('nivel-idade-tabela-preenchida');
         });
 });
 
@@ -395,6 +396,7 @@ Cypress.Commands.add('confirmarFinalizacaoIdade', () => {
         .click({ force: true });
 
     cy.wait(1000);
+    cy.printPasso('nivel-idade-salvo');
 });
 
 // EDITAR
@@ -451,6 +453,7 @@ Cypress.Commands.add('editarUltimoNivelIdade', () => {
         });
 
     cy.wait(1000);
+    cy.printPasso('nivel-idade-dados-alterados');
 
     cy.get('iframe', { timeout: 30000 })
         .its('0.contentDocument.body')
@@ -460,6 +463,7 @@ Cypress.Commands.add('editarUltimoNivelIdade', () => {
         .click({ force: true });
 
     cy.wait(2000);
+    cy.printPasso('nivel-idade-edicao-salva');
 
     cy.get('button.ui-dialog-titlebar-close, button[title="Close"]')
         .last()

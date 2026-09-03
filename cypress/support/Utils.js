@@ -100,7 +100,9 @@ Cypress.Commands.add('createParameterType', (title = 'Cadastrar Tipo de Parâmet
         prefixo: 'TP'
     }).then((dados) => {
         cy.preencherFormulario(dados);
+        cy.printPasso('tipo-parametro-dados-preenchidos');
         cy.salvarTipoParametro();
+        cy.printPasso('tipo-parametro-salvo');
         return cy.wrap(dados);
     });
 });

@@ -216,6 +216,7 @@ Cypress.Commands.add('preencherValoresMatrizIcpIdade', () => {
     });
 
     cy.wait(500);
+    cy.printPasso('matriz-icp-idade-preenchida');
 });
 
 // PRÓXIMO
@@ -313,6 +314,7 @@ Cypress.Commands.add('confirmarFinalizacaoMatrizIcpIdade', () => {
         .click({ force: true });
 
     cy.wait(1000);
+    cy.printPasso('matriz-icp-idade-salva');
 });
 
 // EDITAR
@@ -368,6 +370,7 @@ Cypress.Commands.add('editarUltimaMatrizIcpIdade', () => {
         });
 
     cy.wait(1000);
+    cy.printPasso('matriz-icp-idade-alterada');
 
     cy.get('iframe', { timeout: 30000 })
         .its('0.contentDocument.body')
@@ -378,6 +381,7 @@ Cypress.Commands.add('editarUltimaMatrizIcpIdade', () => {
         .click({ force: true });
 
     cy.wait(2000);
+    cy.printPasso('matriz-icp-idade-edicao-salva');
 
     cy.get('button.ui-dialog-titlebar-close, button[title="Close"]')
         .last()

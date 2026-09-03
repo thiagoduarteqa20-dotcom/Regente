@@ -158,6 +158,9 @@ Cypress.Commands.add('preencherValoresIntervaloIcp', () => {
             cy.wait(300);
         });
     });
+    
+    cy.wait(500);
+    cy.printPasso('nivel-icp-tabela-preenchida');
     cy.log('Intervalos de Min e Max preenchidos com sucesso em todas as linhas!');
 });
 // SELECIONAR 3ª OPÇÃO (Popup LOV)
@@ -249,7 +252,9 @@ Cypress.Commands.add('confirmarFinalizacaoIcp', () => {
         .should('be.visible')
         .last()
         .click({ force: true });
+        
     cy.wait(1000);
+    cy.printPasso('nivel-icp-salvo');
 });
 // EDITAR MAIS RECENTE
 Cypress.Commands.add('editarUltimoNivelIcp', () => {
@@ -281,14 +286,20 @@ Cypress.Commands.add('editarUltimoNivelIcp', () => {
             .eq(3)
             .type('{enter}', { force: true });
     });
+    
     cy.wait(1000);
+    cy.printPasso('nivel-icp-dados-alterados');
+
     cy.get('iframe', { timeout: 30000 })
         .its('0.contentDocument.body')
         .then(cy.wrap)
         .find('button[data-action="save"]')
         .should('be.visible')
         .click({ force: true });
+        
     cy.wait(2000);
+    cy.printPasso('nivel-icp-edicao-salva');
+
     cy.get('button.ui-dialog-titlebar-close, button[title="Close"]')
         .last()
         .should('be.visible')

@@ -235,6 +235,9 @@ Cypress.Commands.add('preencherValoresIntervaloVdm', () => {
 
         cy.wait(300);
     });
+
+    cy.wait(500);
+    cy.printPasso('nivel-vdm-tabela-preenchida');
 });
 // PRÓXIMO
 Cypress.Commands.add('proximoVdm', () => {
@@ -333,6 +336,7 @@ Cypress.Commands.add('confirmarFinalizacaoVdm', () => {
         .click({ force: true });
 
     cy.wait(1000);
+    cy.printPasso('nivel-vdm-salvo');
 });
 // EDITAR MAIS RECENTE
 Cypress.Commands.add('editarUltimoNivelVdm', () => {
@@ -388,6 +392,7 @@ Cypress.Commands.add('editarUltimoNivelVdm', () => {
         });
 
     cy.wait(1000);
+    cy.printPasso('nivel-vdm-dados-alterados');
 
     cy.get('iframe', { timeout: 30000 })
         .its('0.contentDocument.body')
@@ -398,6 +403,7 @@ Cypress.Commands.add('editarUltimoNivelVdm', () => {
         .click({ force: true });
 
     cy.wait(2000);
+    cy.printPasso('nivel-vdm-edicao-salva');
 
     cy.get('button.ui-dialog-titlebar-close, button[title="Close"]')
         .last()

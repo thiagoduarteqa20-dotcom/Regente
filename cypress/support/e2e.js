@@ -21,3 +21,6 @@ import './utilsconceitual'
 
 //matriz
 import './utilsmatrizicp'
+
+//documento automatico
+import 'cypress-mochawesome-reporter/register';

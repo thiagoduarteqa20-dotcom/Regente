@@ -21,15 +21,18 @@ Cypress.Commands.add('deletarJornadaTabela', () => {
         method: 'POST',
         url: '**/ords/wwv_flow.accept*'
     }).as('deleteJornada');
+    
     cy.getJornadaFrame()
         .contains('button', 'Deletar')
         .click();
+        
     cy.contains('button', 'Deletar')
         .click();
+        
     cy.wait('@deleteJornada')
         .then(({ request, response }) => {
-            expect(response.statusCode)
-                .to.eq(200);
+            expect(response.statusCode).to.eq(200);
             cy.log(request.body);
         });
+
 });
