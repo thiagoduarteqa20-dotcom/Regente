@@ -35,8 +35,19 @@ describe('Smoke Test - Matriz ICP Idade', () => {
             }).then((dados) => {
                 cy.abrirCriarMatrizIcpIdade();
                 cy.clicarUtilizarModeloMatrizIcpIdade();
+                cy.preencherNomeMatrizIcpIdadeExistente(dados.nome);
                 cy.selecionarMatrizIcpIdade();
+                
+                // 1º NEXT: Vai para a tela da Grid
                 cy.proximoMatrizIcpIdade();
+                
+                // O PASSO CHAVE QUE FALTAVA: Marca a checkmark das linhas
+                cy.selecionarTodosMatrizIcpIdade();
+                
+                // 2º NEXT: Vai para a tela final
+                cy.proximoMatrizIcpIdade();
+                
+                // Agora sim o botão FINISH vai existir na tela!
                 cy.finalizarMatrizIcpIdade();
                 cy.confirmarFinalizacaoMatrizIcpIdade();
             });

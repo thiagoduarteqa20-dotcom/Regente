@@ -122,10 +122,19 @@ Cypress.Commands.add('clicarUtilizarModeloMatrizIcpIdade', () => {
         });
 });
 
-// PREENCHER NOME - MODELO NOVO
+// PREENCHER NOME - MODELO NOVO (ID preservado)
 Cypress.Commands.add('preencherNomeMatrizIcpIdadeNovo', (nome) => {
     cy.getMatrizIcpIdadeFrame()
         .find('#P51_NOME_MATRIZ_ICP_IDADE')
+        .should('be.visible')
+        .clear()
+        .type(nome, { delay: 50 });
+});
+
+// PREENCHER NOME - MODELO EXISTENTE (Novo ID correto)
+Cypress.Commands.add('preencherNomeMatrizIcpIdadeExistente', (nome) => {
+    cy.getMatrizIcpIdadeFrame()
+        .find('#P51_NEW_NOME_MATRIZ_ICP_IDADE')
         .should('be.visible')
         .clear()
         .type(nome, { delay: 50 });
@@ -140,7 +149,7 @@ Cypress.Commands.add('preencherPesoMatrizIcpIdade', () => {
         .type('1,00', { delay: 50 });
 });
 
-// SELECIONAR MODELO EXISTENTE
+// SELECIONAR MODELO EXISTENTE (Seleciona a primeira opção do combobox)
 Cypress.Commands.add('selecionarMatrizIcpIdade', () => {
     cy.getMatrizIcpIdadeFrame()
         .find('#P51_NOME_MATRIZ_ICP_IDADE_SELECT')
@@ -155,61 +164,67 @@ Cypress.Commands.add('selecionarMatrizIcpIdade', () => {
         .click({ force: true });
 });
 
-// PREENCHER MATRIZ
+// PREENCHER MATRIZ (Aguardando a transição de página e a Grid carregar)
 Cypress.Commands.add('preencherValoresMatrizIcpIdade', () => {
     const matriz = [
-        ['9', '2', '3', '4', '5'],
-        ['6', '7', '8', '9', '10'],
-        ['11', '12', '13', '14', '15'],
-        ['16', '17', '18', '19', '20'],
-        ['21', '22', '23', '24', '25']
+        ['9', '2', '3', '4'],
+        ['6', '7', '8', '9'],
+        ['11', '12', '13', '14'],
+        ['16', '17', '18', '19'],
+        ['21', '22', '23', '24']
     ];
 
-    cy.wait(1000);
+    cy.log('Aguardando a Grid da Matriz carregar após a mudança de tela...');
 
+    // 1. Aguarda dinamicamente o APEX recarregar o iframe e renderizar as linhas da tabela
+    cy.get('iframe', { timeout: 30000 }).should(($iframes) => {
+        const encontrado = [...$iframes].some((iframe) => {
+            try {
+                const doc = iframe.contentDocument;
+                return doc && doc.querySelector('tr.a-GV-row[data-rownum="1"]');
+            } catch (e) {
+                return false;
+            }
+        });
+        expect(encontrado, 'Grid da Matriz carregada no iframe').to.be.true;
+    });
+
+    cy.wait(600); // Respiro para o APEX ativar os eventos de clique nas células
+
+    // 2. Preenchimento célula por célula
     matriz.forEach((linha, linhaIndex) => {
         const rowNum = linhaIndex + 1;
 
         linha.forEach((valor, colunaIndex) => {
-            const coluna = colunaIndex + 4;
+            const coluna = colunaIndex + 3;
 
-            cy.getMatrizIcpIdadeFrame()
-                .then(($frame) => {
-                    const celula = cy.wrap($frame)
-                        .find(`tr.a-GV-row[data-rownum="${rowNum}"]`)
-                        .find('td.a-GV-cell')
-                        .eq(coluna);
+            // Foca e abre o modo de edição na célula
+            cy.getMatrizIcpIdadeFrame().then(($frame) => {
+                const celula = cy.wrap($frame)
+                    .find(`tr.a-GV-row[data-rownum="${rowNum}"]`)
+                    .find('td.a-GV-cell')
+                    .eq(coluna);
 
-                    if (linhaIndex === 0 && colunaIndex === 0) {
-                        celula.dblclick({ force: true });
-                    } else {
-                        celula.click({ force: true });
-                    }
-                });
+                if (linhaIndex === 0 && colunaIndex === 0) {
+                    celula.dblclick({ force: true });
+                } else {
+                    celula.click({ force: true });
+                }
+            });
 
-            cy.getMatrizIcpIdadeFrame()
-                .then(($frame) => {
-                    cy.wrap($frame)
-                        .find(`tr.a-GV-row[data-rownum="${rowNum}"]`)
-                        .find('td.a-GV-cell')
-                        .eq(coluna)
-                        .find('input, textarea', {
-                            timeout: 10000
-                        })
-                        .should('be.visible')
-                        .first()
-                        .clear({ force: true })
-                        .type(valor, { delay: 30 });
-                });
-
-            cy.getMatrizIcpIdadeFrame()
-                .then(($frame) => {
-                    cy.wrap($frame)
-                        .find(`tr.a-GV-row[data-rownum="${rowNum}"]`)
-                        .find('td.a-GV-cell')
-                        .eq(coluna)
-                        .type('{enter}', { force: true });
-                });
+            // Localiza o input gerado pelo APEX e digita o valor
+            cy.getMatrizIcpIdadeFrame().then(($frame) => {
+                cy.wrap($frame)
+                    .find(`tr.a-GV-row[data-rownum="${rowNum}"]`)
+                    .find('td.a-GV-cell')
+                    .eq(coluna)
+                    .find('input, textarea', { timeout: 10000 })
+                    .should('be.visible')
+                    .first()
+                    .clear({ force: true })
+                    .type(valor, { delay: 30 })
+                    .type('{enter}', { force: true });
+            });
 
             cy.wait(300);
         });
@@ -251,6 +266,7 @@ Cypress.Commands.add('proximoMatrizIcpIdade', () => {
 
 // FINALIZAR
 Cypress.Commands.add('finalizarMatrizIcpIdade', () => {
+    cy.log('Finalizando Matriz ICP Idade...');
     cy.wait(1500);
 
     cy.get('iframe', { timeout: 30000 })
@@ -293,6 +309,7 @@ Cypress.Commands.add('finalizarMatrizIcpIdade', () => {
 
             cy.wrap(bodyDoIframe)
                 .find('button[data-otel-label="FINISH"]')
+                .should('exist')
                 .should('be.visible')
                 .scrollIntoView()
                 .click({ force: true });
@@ -389,4 +406,24 @@ Cypress.Commands.add('editarUltimaMatrizIcpIdade', () => {
         .click({ force: true });
 
     cy.wait(1000);
+});
+
+// SELECIONAR TODOS (Marca a checkmark da header na grid)
+Cypress.Commands.add('selecionarTodosMatrizIcpIdade', () => {
+    cy.wait(1000);
+
+    cy.getMatrizIcpIdadeFrame()
+        .then(($frame) => {
+            cy.wrap($frame)
+                .find(
+                    '[aria-label="Select All Rows"], .a-GV-headerCheckbox, th.a-GV-header--selection input',
+                    { timeout: 30000 }
+                )
+                .should('exist')
+                .should('be.visible')
+                .first()
+                .click({ force: true });
+        });
+
+    cy.wait(500);
 });

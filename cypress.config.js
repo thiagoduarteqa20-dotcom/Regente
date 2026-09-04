@@ -6,14 +6,22 @@ module.exports = defineConfig({
 
   allowCypressEnv: false,
 
+  // Estabilização para execução headless (cy run)
+  defaultCommandTimeout: 15000,
+  pageLoadTimeout: 30000,
+  retries: {
+    runMode: 2, // Reexecuta testes quebrados automaticamente no 'cy run'
+    openMode: 0,
+  },
+
   // Configurações globais do reporter
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     reportDir: 'cypress/reports',
-    charts: false,              // Remove gráficos desnecessários
-    embeddedScreenshots: true,  // Insere as prints direto no HTML
-    inlineAssets: true,         // Junta tudo em um arquivo único
-    code: false,                // Oculta o código, mostrando só os títulos e prints
+    charts: false,              
+    embeddedScreenshots: true,  
+    inlineAssets: true,         
+    code: false,                
   },
 
   e2e: {
