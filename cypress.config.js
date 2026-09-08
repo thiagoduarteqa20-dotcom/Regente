@@ -6,11 +6,10 @@ module.exports = defineConfig({
 
   allowCypressEnv: false,
 
-  // Estabilização para execução headless (cy run)
   defaultCommandTimeout: 15000,
   pageLoadTimeout: 30000,
   retries: {
-    runMode: 2, // Reexecuta testes quebrados automaticamente no 'cy run'
+    runMode: 2,
     openMode: 0,
   },
 
@@ -18,7 +17,7 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     reportDir: 'cypress/reports',
-    charts: false,              
+    charts: true,              
     embeddedScreenshots: true,  
     inlineAssets: true,         
     code: false,                

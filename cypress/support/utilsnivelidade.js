@@ -401,9 +401,10 @@ Cypress.Commands.add('confirmarFinalizacaoIdade', () => {
 
 // EDITAR
 Cypress.Commands.add('editarUltimoNivelIdade', () => {
-    const valor = Cypress._.random(1, 9);
+    const valorPrimeiraLinha = Cypress._.random(16, 99);
+    const valorSegundaLinha = valorPrimeiraLinha - 1;
 
-    cy.log(`Editando Nível Idade com valor: ${valor}`);
+    cy.log(`Editando Nível Idade - Linha 1: ${valorPrimeiraLinha}, Linha 2: ${valorSegundaLinha}`);
 
     cy.get('a[aria-roledescription="dialog link"]')
         .last()
@@ -427,13 +428,14 @@ Cypress.Commands.add('editarUltimoNivelIdade', () => {
     cy.getNivelIdadeFrame()
         .then(($frame) => {
 
-            const $celulaMin = cy.wrap($frame)
+            // --- EDITANDO A PRIMEIRA LINHA ---
+            const $celulaMinL1 = cy.wrap($frame)
                 .find('tr.a-GV-row[data-rownum="1"]')
                 .find('td.a-GV-cell')
                 .eq(3)
                 .should('exist');
 
-            $celulaMin.dblclick({ force: true });
+            $celulaMinL1.dblclick({ force: true });
 
             cy.wrap($frame)
                 .find('tr.a-GV-row[data-rownum="1"]')
@@ -443,12 +445,40 @@ Cypress.Commands.add('editarUltimoNivelIdade', () => {
                 .should('be.visible')
                 .first()
                 .clear({ force: true })
-                .type(valor, { delay: 30 });
+                .type(valorPrimeiraLinha, { delay: 30 });
 
             cy.wrap($frame)
                 .find('tr.a-GV-row[data-rownum="1"]')
                 .find('td.a-GV-cell')
                 .eq(3)
+                .type('{enter}', { force: true });
+
+            cy.wait(500);
+
+            // --- EDITANDO A SEGUNDA LINHA (Coluna seguinte ou ajuste proporcional) ---
+            // Ajuste o índice .eq() caso a coluna da segunda linha seja diferente (ex: eq(4))
+            const $celulaMinL2 = cy.wrap($frame)
+                .find('tr.a-GV-row[data-rownum="2"]')
+                .find('td.a-GV-cell')
+                .eq(4) 
+                .should('exist');
+
+            $celulaMinL2.click({ force: true });
+
+            cy.wrap($frame)
+                .find('tr.a-GV-row[data-rownum="2"]')
+                .find('td.a-GV-cell')
+                .eq(4)
+                .find('input, textarea', { timeout: 10000 })
+                .should('be.visible')
+                .first()
+                .clear({ force: true })
+                .type(valorSegundaLinha, { delay: 30 });
+
+            cy.wrap($frame)
+                .find('tr.a-GV-row[data-rownum="2"]')
+                .find('td.a-GV-cell')
+                .eq(4)
                 .type('{enter}', { force: true });
         });
 
