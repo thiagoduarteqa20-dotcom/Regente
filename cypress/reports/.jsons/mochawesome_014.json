@@ -1,0 +1,147 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-15T20:40:22.210Z",
+    "end": "2026-09-15T20:41:06.303Z",
+    "duration": 44093,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5681b045-1d8c-4c4f-82c2-7c3877ebf7b6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tiposcondicao.cy.js",
+      "file": "cypress\\e2e\\tiposcondicao.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d343b3c7-2066-4ab6-8c8a-56f8b92b8a28",
+          "title": "Gerenciamento de Tipos de Condição",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Criar Tipo de Condição com Sucesso",
+              "fullTitle": "Gerenciamento de Tipos de Condição Criar Tipo de Condição com Sucesso",
+              "timedOut": null,
+              "duration": 15371,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\tiposcondicao.cy.js\\\\tipo-condicao-dados-preenchidos.png\",\n      \"\\\\tiposcondicao.cy.js\\\\tipo-condicao-salvo-com-sucesso.png\"\n    ]\n  ]\n}",
+              "code": "",
+              "err": {},
+              "uuid": "402faac7-b1f6-446d-b262-302286ee1647",
+              "parentUUID": "d343b3c7-2066-4ab6-8c8a-56f8b92b8a28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Editar Último Tipo de Condição com Sucesso",
+              "fullTitle": "Gerenciamento de Tipos de Condição Editar Último Tipo de Condição com Sucesso",
+              "timedOut": null,
+              "duration": 14073,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\tiposcondicao.cy.js\\\\tipo-condicao-dados-alterados.png\",\n      \"\\\\tiposcondicao.cy.js\\\\tipo-condicao-edicao-salva.png\"\n    ]\n  ]\n}",
+              "code": "",
+              "err": {},
+              "uuid": "04b4ab11-ee78-4078-bfd6-b2b7b1d15234",
+              "parentUUID": "d343b3c7-2066-4ab6-8c8a-56f8b92b8a28",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletar Último Tipo de Condição com Sucesso",
+              "fullTitle": "Gerenciamento de Tipos de Condição Deletar Último Tipo de Condição com Sucesso",
+              "timedOut": null,
+              "duration": 14168,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\tiposcondicao.cy.js\\\\tipo-condicao-confirmar-exclusao.png\",\n      \"\\\\tiposcondicao.cy.js\\\\tipo-condicao-excluido-com-sucesso.png\"\n    ]\n  ]\n}",
+              "code": "",
+              "err": {},
+              "uuid": "8633f7b1-3b2e-4037-a1a8-001dcb347d4c",
+              "parentUUID": "d343b3c7-2066-4ab6-8c8a-56f8b92b8a28",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "402faac7-b1f6-446d-b262-302286ee1647",
+            "04b4ab11-ee78-4078-bfd6-b2b7b1d15234",
+            "8633f7b1-3b2e-4037-a1a8-001dcb347d4c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 43612,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "code": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

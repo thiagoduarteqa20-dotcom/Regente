@@ -1,0 +1,147 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-15T20:29:16.541Z",
+    "end": "2026-09-15T20:30:06.964Z",
+    "duration": 50423,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c4d6eb80-2539-47c3-90ff-fba9909f94d0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ativoinventario.cy.js",
+      "file": "cypress\\e2e\\ativoinventario.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "082ac291-ca7c-4f23-928c-e90b75bd2555",
+          "title": "Smoke test - Gerenciamento de Ativos por Tipo do Inventário",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Criar Ativo por Tipo do Inventário com Sucesso",
+              "fullTitle": "Smoke test - Gerenciamento de Ativos por Tipo do Inventário Criar Ativo por Tipo do Inventário com Sucesso",
+              "timedOut": null,
+              "duration": 18795,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-acessado.png\",\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-modal-criacao-aberto.png\",\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-preenchido.png\",\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-criado.png\"\n    ]\n  ]\n}",
+              "code": "",
+              "err": {},
+              "uuid": "65a66935-5aef-48e5-975c-bb09241b0066",
+              "parentUUID": "082ac291-ca7c-4f23-928c-e90b75bd2555",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Editar Último Ativo por Tipo do Inventário com Sucesso",
+              "fullTitle": "Smoke test - Gerenciamento de Ativos por Tipo do Inventário Editar Último Ativo por Tipo do Inventário com Sucesso",
+              "timedOut": null,
+              "duration": 15971,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-acessado.png\",\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-modal-edicao-aberto.png\",\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-editado-preenchido.png\",\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-edicao-salva.png\"\n    ]\n  ]\n}",
+              "code": "",
+              "err": {},
+              "uuid": "0eeae218-d089-45d9-95bd-fcca0014aff0",
+              "parentUUID": "082ac291-ca7c-4f23-928c-e90b75bd2555",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deletar Último Ativo por Tipo do Inventário com Sucesso",
+              "fullTitle": "Smoke test - Gerenciamento de Ativos por Tipo do Inventário Deletar Último Ativo por Tipo do Inventário com Sucesso",
+              "timedOut": null,
+              "duration": 14990,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-acessado.png\",\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-confirmacao-exclusao.png\",\n      \"\\\\ativoinventario.cy.js\\\\ativos-tipo-inventario-deletado.png\"\n    ]\n  ]\n}",
+              "code": "",
+              "err": {},
+              "uuid": "effbc4c6-74d7-4800-8127-95e180986a36",
+              "parentUUID": "082ac291-ca7c-4f23-928c-e90b75bd2555",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "65a66935-5aef-48e5-975c-bb09241b0066",
+            "0eeae218-d089-45d9-95bd-fcca0014aff0",
+            "effbc4c6-74d7-4800-8127-95e180986a36"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 49756,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "code": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

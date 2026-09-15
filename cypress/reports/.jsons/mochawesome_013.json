@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-15T20:39:38.724Z",
+    "end": "2026-09-15T20:40:18.509Z",
+    "duration": 39785,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bbf897e2-9048-40c0-af25-8a25e0cdc15b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tiposativo.cy.js",
+      "file": "cypress\\e2e\\tiposativo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c9f3c59b-d7c4-48d8-9dc7-1aa6551c5e29",
+          "title": "Smoke Test - Tipos de Ativo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "f9388c7c-c3a7-496c-858c-6ee6992f21d6",
+              "title": "Tipos de Ativo",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Cadastrar Novo Tipo de Ativo com Sucesso",
+                  "fullTitle": "Smoke Test - Tipos de Ativo Tipos de Ativo Cadastrar Novo Tipo de Ativo com Sucesso",
+                  "timedOut": null,
+                  "duration": 14283,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\tiposativo.cy.js\\\\tipo-ativo-dados-preenchidos.png\",\n      \"\\\\tiposativo.cy.js\\\\tipo-ativo-salvo-com-sucesso.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "18ae8e20-cfda-4da2-b326-b14b11482abb",
+                  "parentUUID": "f9388c7c-c3a7-496c-858c-6ee6992f21d6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Editar Último Tipo de Ativo com Sucesso",
+                  "fullTitle": "Smoke Test - Tipos de Ativo Tipos de Ativo Editar Último Tipo de Ativo com Sucesso",
+                  "timedOut": null,
+                  "duration": 12801,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\tiposativo.cy.js\\\\tipo-ativo-dados-alterados.png\",\n      \"\\\\tiposativo.cy.js\\\\tipo-ativo-edicao-salva.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "c35a0e14-da34-4f2a-8776-1b0beae668c6",
+                  "parentUUID": "f9388c7c-c3a7-496c-858c-6ee6992f21d6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deletar Último Tipo de Ativo com Sucesso",
+                  "fullTitle": "Smoke Test - Tipos de Ativo Tipos de Ativo Deletar Último Tipo de Ativo com Sucesso",
+                  "timedOut": null,
+                  "duration": 12104,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\tiposativo.cy.js\\\\tipo-ativo-confirmar-exclusao.png\",\n      \"\\\\tiposativo.cy.js\\\\tipo-ativo-excluido-com-sucesso.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "e6cd4b96-bc0a-4a50-83f0-7ce30baf82dd",
+                  "parentUUID": "f9388c7c-c3a7-496c-858c-6ee6992f21d6",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "18ae8e20-cfda-4da2-b326-b14b11482abb",
+                "c35a0e14-da34-4f2a-8776-1b0beae668c6",
+                "e6cd4b96-bc0a-4a50-83f0-7ce30baf82dd"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 39188,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "code": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

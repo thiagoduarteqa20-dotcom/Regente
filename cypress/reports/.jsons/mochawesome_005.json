@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-15T20:33:39.125Z",
+    "end": "2026-09-15T20:34:03.659Z",
+    "duration": 24534,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "33d07893-c19b-49c0-b8e7-1645f7d3b650",
+      "title": "",
+      "fullFile": "cypress\\e2e\\jornadas.cy.js",
+      "file": "cypress\\e2e\\jornadas.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5d02c96c-d429-4b2f-8750-22bc20593a0e",
+          "title": "Smoke Test - Módulo de Pavimentos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "7e13e704-c0a9-46ee-8ded-8ab7b24787c2",
+              "title": "Jornadas",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Cadastrar Jornada",
+                  "fullTitle": "Smoke Test - Módulo de Pavimentos Jornadas Cadastrar Jornada",
+                  "timedOut": null,
+                  "duration": 10282,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\jornadas.cy.js\\\\01-criar-dados-preenchidos.png\",\n      \"\\\\jornadas.cy.js\\\\02-criar-salvo.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "a9f04d19-a74a-4dee-9275-d02b859358d9",
+                  "parentUUID": "7e13e704-c0a9-46ee-8ded-8ab7b24787c2",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Editar Jornada",
+                  "fullTitle": "Smoke Test - Módulo de Pavimentos Jornadas Editar Jornada",
+                  "timedOut": null,
+                  "duration": 6007,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\jornadas.cy.js\\\\03-editar-dados-alterados.png\",\n      \"\\\\jornadas.cy.js\\\\04-editar-alteracao-salva.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "cc21390b-20f8-4c07-9c31-0e8a109fda04",
+                  "parentUUID": "7e13e704-c0a9-46ee-8ded-8ab7b24787c2",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Excluir Jornada",
+                  "fullTitle": "Smoke Test - Módulo de Pavimentos Jornadas Excluir Jornada",
+                  "timedOut": null,
+                  "duration": 7590,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\jornadas.cy.js\\\\05-excluir-selecionado.png\",\n      \"\\\\jornadas.cy.js\\\\06-exclusao-concluida.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "3b361060-da61-4319-91c3-e6ee000a96a2",
+                  "parentUUID": "7e13e704-c0a9-46ee-8ded-8ab7b24787c2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a9f04d19-a74a-4dee-9275-d02b859358d9",
+                "cc21390b-20f8-4c07-9c31-0e8a109fda04",
+                "3b361060-da61-4319-91c3-e6ee000a96a2"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 23879,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "code": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

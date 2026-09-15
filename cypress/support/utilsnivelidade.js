@@ -399,7 +399,7 @@ Cypress.Commands.add('confirmarFinalizacaoIdade', () => {
     cy.printPasso('nivel-idade-salvo');
 });
 
-// EDITAR
+// EDITAR ÚLTIMO NÍVEL IDADE
 Cypress.Commands.add('editarUltimoNivelIdade', () => {
     const valorPrimeiraLinha = Cypress._.random(16, 99);
     const valorSegundaLinha = valorPrimeiraLinha - 1;
@@ -425,66 +425,64 @@ Cypress.Commands.add('editarUltimoNivelIdade', () => {
 
     cy.wait(1000);
 
-    cy.getNivelIdadeFrame()
-        .then(($frame) => {
+    cy.getNivelIdadeFrame().then(($frame) => {
+        // --- EDITANDO A PRIMEIRA LINHA ---
+        const $celulaMinL1 = cy.wrap($frame)
+            .find('tr.a-GV-row[data-rownum="1"]')
+            .find('td.a-GV-cell')
+            .eq(3)
+            .should('exist');
 
-            // --- EDITANDO A PRIMEIRA LINHA ---
-            const $celulaMinL1 = cy.wrap($frame)
-                .find('tr.a-GV-row[data-rownum="1"]')
-                .find('td.a-GV-cell')
-                .eq(3)
-                .should('exist');
+        $celulaMinL1.dblclick({ force: true });
 
-            $celulaMinL1.dblclick({ force: true });
+        cy.wrap($frame)
+            .find('tr.a-GV-row[data-rownum="1"]')
+            .find('td.a-GV-cell')
+            .eq(3)
+            .find('input, textarea', { timeout: 10000 })
+            .should('be.visible')
+            .first()
+            .clear({ force: true })
+            .type(valorPrimeiraLinha, { delay: 30 });
 
-            cy.wrap($frame)
-                .find('tr.a-GV-row[data-rownum="1"]')
-                .find('td.a-GV-cell')
-                .eq(3)
-                .find('input, textarea', { timeout: 10000 })
-                .should('be.visible')
-                .first()
-                .clear({ force: true })
-                .type(valorPrimeiraLinha, { delay: 30 });
+        cy.wrap($frame)
+            .find('tr.a-GV-row[data-rownum="1"]')
+            .find('td.a-GV-cell')
+            .eq(3)
+            .type('{enter}', { force: true });
 
-            cy.wrap($frame)
-                .find('tr.a-GV-row[data-rownum="1"]')
-                .find('td.a-GV-cell')
-                .eq(3)
-                .type('{enter}', { force: true });
+        cy.wait(500);
 
-            cy.wait(500);
+        // --- EDITANDO A SEGUNDA LINHA ---
+        const $celulaMinL2 = cy.wrap($frame)
+            .find('tr.a-GV-row[data-rownum="2"]')
+            .find('td.a-GV-cell')
+            .eq(4)
+            .should('exist');
 
-            // --- EDITANDO A SEGUNDA LINHA (Coluna seguinte ou ajuste proporcional) ---
-            // Ajuste o índice .eq() caso a coluna da segunda linha seja diferente (ex: eq(4))
-            const $celulaMinL2 = cy.wrap($frame)
-                .find('tr.a-GV-row[data-rownum="2"]')
-                .find('td.a-GV-cell')
-                .eq(4) 
-                .should('exist');
+        $celulaMinL2.click({ force: true });
 
-            $celulaMinL2.click({ force: true });
+        cy.wrap($frame)
+            .find('tr.a-GV-row[data-rownum="2"]')
+            .find('td.a-GV-cell')
+            .eq(4)
+            .find('input, textarea', { timeout: 10000 })
+            .should('be.visible')
+            .first()
+            .clear({ force: true })
+            .type(valorSegundaLinha, { delay: 30 });
 
-            cy.wrap($frame)
-                .find('tr.a-GV-row[data-rownum="2"]')
-                .find('td.a-GV-cell')
-                .eq(4)
-                .find('input, textarea', { timeout: 10000 })
-                .should('be.visible')
-                .first()
-                .clear({ force: true })
-                .type(valorSegundaLinha, { delay: 30 });
-
-            cy.wrap($frame)
-                .find('tr.a-GV-row[data-rownum="2"]')
-                .find('td.a-GV-cell')
-                .eq(4)
-                .type('{enter}', { force: true });
-        });
+        cy.wrap($frame)
+            .find('tr.a-GV-row[data-rownum="2"]')
+            .find('td.a-GV-cell')
+            .eq(4)
+            .type('{enter}', { force: true });
+    });
 
     cy.wait(1000);
     cy.printPasso('nivel-idade-dados-alterados');
 
+    // CLICAR EM SALVAR
     cy.get('iframe', { timeout: 30000 })
         .its('0.contentDocument.body')
         .then(cy.wrap)
@@ -492,9 +490,23 @@ Cypress.Commands.add('editarUltimoNivelIdade', () => {
         .should('be.visible')
         .click({ force: true });
 
-    cy.wait(2000);
+    cy.wait(1500);
+
+    // CONFIRMAR POPUP DO APEX CASO APAREÇA ("There are unsaved changes / OK")
+    cy.get('body').then(($body) => {
+        const btnConfirm = $body.find('button.js-confirmBtn, .ui-dialog-buttonpane button, button:contains("OK")');
+        if (btnConfirm.length > 0) {
+            cy.wrap(btnConfirm)
+                .filter(':visible')
+                .first()
+                .click({ force: true });
+        }
+    });
+
+    cy.wait(1500);
     cy.printPasso('nivel-idade-edicao-salva');
 
+    // FECHAR A JANELA MODAL
     cy.get('button.ui-dialog-titlebar-close, button[title="Close"]')
         .last()
         .should('be.visible')

@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-15T20:41:09.655Z",
+    "end": "2026-09-15T20:41:49.905Z",
+    "duration": 40250,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0ac809a6-ab79-4e60-a73a-e4cdaf8b4260",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tiposmaterial.cy.js",
+      "file": "cypress\\e2e\\tiposmaterial.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "93abfb61-8506-47a3-a3f3-3bbfcc12d6de",
+          "title": "Smoke Test - Tipos de Material",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "59883f6e-507f-4106-a4a8-514045ecf28b",
+              "title": "Tipos de Material",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Cadastrar Novo Tipo de Material com Sucesso",
+                  "fullTitle": "Smoke Test - Tipos de Material Tipos de Material Cadastrar Novo Tipo de Material com Sucesso",
+                  "timedOut": null,
+                  "duration": 14323,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\tiposmaterial.cy.js\\\\tipo-material-dados-preenchidos.png\",\n      \"\\\\tiposmaterial.cy.js\\\\tipo-material-salvo-com-sucesso.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "1d2864cd-db16-404f-8f0f-03eff19607f6",
+                  "parentUUID": "59883f6e-507f-4106-a4a8-514045ecf28b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Editar Último Tipo de Material com Sucesso",
+                  "fullTitle": "Smoke Test - Tipos de Material Tipos de Material Editar Último Tipo de Material com Sucesso",
+                  "timedOut": null,
+                  "duration": 12554,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\tiposmaterial.cy.js\\\\tipo-material-dados-alterados.png\",\n      \"\\\\tiposmaterial.cy.js\\\\tipo-material-edicao-salva.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "3c10ad7f-afb8-4564-8163-9c14283a20e7",
+                  "parentUUID": "59883f6e-507f-4106-a4a8-514045ecf28b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deletar Último Tipo de Material com Sucesso",
+                  "fullTitle": "Smoke Test - Tipos de Material Tipos de Material Deletar Último Tipo de Material com Sucesso",
+                  "timedOut": null,
+                  "duration": 12797,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\tiposmaterial.cy.js\\\\tipo-material-confirmar-exclusao.png\",\n      \"\\\\tiposmaterial.cy.js\\\\tipo-material-excluido-com-sucesso.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "e3beaf53-dae8-445b-a328-b8faee6ad64d",
+                  "parentUUID": "59883f6e-507f-4106-a4a8-514045ecf28b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "1d2864cd-db16-404f-8f0f-03eff19607f6",
+                "3c10ad7f-afb8-4564-8163-9c14283a20e7",
+                "e3beaf53-dae8-445b-a328-b8faee6ad64d"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 39674,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "code": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

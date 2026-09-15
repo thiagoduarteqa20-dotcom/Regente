@@ -22,5 +22,21 @@ import './utilsconceitual'
 //matriz
 import './utilsmatrizicp'
 
+//ciclo
+
+import './utilsciclo'
+import './utilssubciclo'
+
+
+//inventario
+
+import './utilstiposativo'
+import './utilstiposmaterial'
+import './utilsunidadesmedida'
+import './utilstiposcondicao'
+import './utilstipoinventario'
+import './utilsativosinventario'
+import './utilsativos'
+
 //documento automatico
 import 'cypress-mochawesome-reporter/register';

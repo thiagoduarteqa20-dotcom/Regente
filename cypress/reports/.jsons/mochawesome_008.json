@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-15T20:35:24.005Z",
+    "end": "2026-09-15T20:36:32.735Z",
+    "duration": 68730,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c0f230a8-0e3f-47c3-8cdb-6982b9c93ebe",
+      "title": "",
+      "fullFile": "cypress\\e2e\\nivelidade.cy.js",
+      "file": "cypress\\e2e\\nivelidade.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b1130dbe-84df-4208-99f5-1bae90c35681",
+          "title": "Smoke Test - Nivel Idade",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "f1c42265-3a70-4651-b8bc-e5f48eecd6f9",
+              "title": "Nivel Idade",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Cadastrar Nivel Idade - Criar Modelo Novo",
+                  "fullTitle": "Smoke Test - Nivel Idade Nivel Idade Cadastrar Nivel Idade - Criar Modelo Novo",
+                  "timedOut": null,
+                  "duration": 35429,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\nivelidade.cy.js\\\\nivel-idade-tabela-preenchida.png\",\n      \"\\\\nivelidade.cy.js\\\\nivel-idade-salvo.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "b3210425-ef2b-4170-9951-e130c07f3977",
+                  "parentUUID": "f1c42265-3a70-4651-b8bc-e5f48eecd6f9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Cadastrar Nivel Idade - Utilizando Modelo Existente",
+                  "fullTitle": "Smoke Test - Nivel Idade Nivel Idade Cadastrar Nivel Idade - Utilizando Modelo Existente",
+                  "timedOut": null,
+                  "duration": 15323,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\nivelidade.cy.js\\\\nivel-idade-salvo.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "eb06caad-2a47-4dc5-bfae-6a51fe63f9ee",
+                  "parentUUID": "f1c42265-3a70-4651-b8bc-e5f48eecd6f9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Editar Nível Idade - Alterar valor da célula",
+                  "fullTitle": "Smoke Test - Nivel Idade Nivel Idade Editar Nível Idade - Alterar valor da célula",
+                  "timedOut": null,
+                  "duration": 17015,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\nivelidade.cy.js\\\\nivel-idade-dados-alterados.png\",\n      \"\\\\nivelidade.cy.js\\\\nivel-idade-edicao-salva.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "94d316ca-239b-4608-8e12-ebb536c61782",
+                  "parentUUID": "f1c42265-3a70-4651-b8bc-e5f48eecd6f9",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b3210425-ef2b-4170-9951-e130c07f3977",
+                "eb06caad-2a47-4dc5-bfae-6a51fe63f9ee",
+                "94d316ca-239b-4608-8e12-ebb536c61782"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 67767,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "code": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

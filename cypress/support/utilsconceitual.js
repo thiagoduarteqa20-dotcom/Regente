@@ -277,6 +277,8 @@ Cypress.Commands.add('selecionarTodosIcpConceitual', () => {
                 .should('be.visible')
                 .first()
                 .click({ force: true });
+            cy.wait(300);
+            cy.printPasso('icp-conceitual-tabela-preenchida');
         });
 
     cy.wait(500);

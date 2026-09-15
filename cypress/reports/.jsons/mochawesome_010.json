@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-09-15T20:37:42.664Z",
+    "end": "2026-09-15T20:38:01.396Z",
+    "duration": 18732,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bde3861c-134f-4ec1-89de-f1defa52b885",
+      "title": "",
+      "fullFile": "cypress\\e2e\\parametros.cy.js",
+      "file": "cypress\\e2e\\parametros.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5322a24a-f81d-4bcf-8214-df53d0455465",
+          "title": "Smoke Test - Módulo de Pavimentos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "9fd222d0-a639-4b71-8f10-369b24498c06",
+              "title": "Parâmetros",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Cadastrar Parâmetros",
+                  "fullTitle": "Smoke Test - Módulo de Pavimentos Parâmetros Cadastrar Parâmetros",
+                  "timedOut": null,
+                  "duration": 10145,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\parametros.cy.js\\\\tipo-parametro-dados-preenchidos.png\",\n      \"\\\\parametros.cy.js\\\\tipo-parametro-salvo.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "4bf47f0f-0314-4a51-8449-962671fc4ebd",
+                  "parentUUID": "9fd222d0-a639-4b71-8f10-369b24498c06",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Editar Parâmetros",
+                  "fullTitle": "Smoke Test - Módulo de Pavimentos Parâmetros Editar Parâmetros",
+                  "timedOut": null,
+                  "duration": 4531,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "",
+                  "err": {},
+                  "uuid": "6a3a18f7-2f76-4e4e-898d-a7b7dad5f376",
+                  "parentUUID": "9fd222d0-a639-4b71-8f10-369b24498c06",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Excluir Parâmetros",
+                  "fullTitle": "Smoke Test - Módulo de Pavimentos Parâmetros Excluir Parâmetros",
+                  "timedOut": null,
+                  "duration": 3710,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "",
+                  "err": {},
+                  "uuid": "88aefba6-8528-4a53-b750-dcd0870f0e87",
+                  "parentUUID": "9fd222d0-a639-4b71-8f10-369b24498c06",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "4bf47f0f-0314-4a51-8449-962671fc4ebd",
+                "6a3a18f7-2f76-4e4e-898d-a7b7dad5f376",
+                "88aefba6-8528-4a53-b750-dcd0870f0e87"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 18386,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "code": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
