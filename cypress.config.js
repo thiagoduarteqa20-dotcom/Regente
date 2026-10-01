@@ -24,7 +24,7 @@ module.exports = defineConfig({
   },
 
   e2e: {
-    baseUrl: 'https://dev.regente.tec.br/ords/r/regente_dev/portal/login?tz=-3:00',
+    baseUrl: 'https://dev.regente.tec.br/ords/r/regente/portal/login?tz=-3:00',
     setupNodeEvents(on, config) {
       // Obrigatório para registrar o plugin do relatório
       require('cypress-mochawesome-reporter/plugin')(on);
