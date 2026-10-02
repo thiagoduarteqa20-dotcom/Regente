@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-01T17:19:23.227Z",
-    "end": "2026-10-01T17:21:33.713Z",
-    "duration": 130486,
+    "start": "2026-10-02T18:37:00.766Z",
+    "end": "2026-10-02T18:39:27.030Z",
+    "duration": 146264,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c45e655a-74dd-427a-9337-b59d36687d52",
+      "uuid": "7f9d5090-7fb4-4344-bc51-895ca26c89ee",
       "title": "",
       "fullFile": "cypress\\e2e\\icpmatriz.cy.js",
       "file": "cypress\\e2e\\icpmatriz.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8c089152-a76d-4b45-879e-27c40bd19d68",
+          "uuid": "69884520-4ad4-4715-8f4b-fdf6cf38539b",
           "title": "Smoke Test - Matriz ICP Idade",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "0f250a57-4d50-4395-9e5d-9ce1932a0e7e",
+              "uuid": "237c007e-d9d6-4f18-8c30-4785c07ba0a4",
               "title": "Matriz ICP Idade",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "Cadastrar Matriz ICP Idade - Criar Modelo Novo",
                   "fullTitle": "Smoke Test - Matriz ICP Idade Matriz ICP Idade Cadastrar Matriz ICP Idade - Criar Modelo Novo",
                   "timedOut": null,
-                  "duration": 88866,
+                  "duration": 102540,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -56,8 +56,8 @@
                   "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\icpmatriz.cy.js\\\\matriz-icp-idade-preenchida.png\",\n      \"\\\\icpmatriz.cy.js\\\\matriz-icp-idade-salva.png\"\n    ]\n  ]\n}",
                   "code": "",
                   "err": {},
-                  "uuid": "d84af4a7-1eda-4074-bcec-b85446e3504c",
-                  "parentUUID": "0f250a57-4d50-4395-9e5d-9ce1932a0e7e",
+                  "uuid": "2d274246-bee9-48fd-b501-52b3db42ff6f",
+                  "parentUUID": "237c007e-d9d6-4f18-8c30-4785c07ba0a4",
                   "isHook": false,
                   "skipped": false
                 },
@@ -65,7 +65,7 @@
                   "title": "Cadastrar Matriz ICP Idade - Utilizando Modelo Existente",
                   "fullTitle": "Smoke Test - Matriz ICP Idade Matriz ICP Idade Cadastrar Matriz ICP Idade - Utilizando Modelo Existente",
                   "timedOut": null,
-                  "duration": 21600,
+                  "duration": 20251,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -74,8 +74,8 @@
                   "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\icpmatriz.cy.js\\\\matriz-icp-idade-salva.png\"\n    ]\n  ]\n}",
                   "code": "",
                   "err": {},
-                  "uuid": "c9208254-6751-4fb5-97ee-269b6aab2a3f",
-                  "parentUUID": "0f250a57-4d50-4395-9e5d-9ce1932a0e7e",
+                  "uuid": "06e40ec5-f0f3-4f7b-99a6-71aa66acb0d4",
+                  "parentUUID": "237c007e-d9d6-4f18-8c30-4785c07ba0a4",
                   "isHook": false,
                   "skipped": false
                 },
@@ -83,7 +83,7 @@
                   "title": "Editar Matriz ICP Idade - Alterar valor da célula",
                   "fullTitle": "Smoke Test - Matriz ICP Idade Matriz ICP Idade Editar Matriz ICP Idade - Alterar valor da célula",
                   "timedOut": null,
-                  "duration": 18222,
+                  "duration": 20828,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -92,22 +92,22 @@
                   "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\icpmatriz.cy.js\\\\matriz-icp-idade-alterada.png\",\n      \"\\\\icpmatriz.cy.js\\\\matriz-icp-idade-edicao-salva.png\"\n    ]\n  ]\n}",
                   "code": "",
                   "err": {},
-                  "uuid": "f96de115-ba56-4da9-af56-32408fa87538",
-                  "parentUUID": "0f250a57-4d50-4395-9e5d-9ce1932a0e7e",
+                  "uuid": "3aed3c7f-c78b-402f-bd72-73214cbae018",
+                  "parentUUID": "237c007e-d9d6-4f18-8c30-4785c07ba0a4",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d84af4a7-1eda-4074-bcec-b85446e3504c",
-                "c9208254-6751-4fb5-97ee-269b6aab2a3f",
-                "f96de115-ba56-4da9-af56-32408fa87538"
+                "2d274246-bee9-48fd-b501-52b3db42ff6f",
+                "06e40ec5-f0f3-4f7b-99a6-71aa66acb0d4",
+                "3aed3c7f-c78b-402f-bd72-73214cbae018"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 128688,
+              "duration": 143619,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000

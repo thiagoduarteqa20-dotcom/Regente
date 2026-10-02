@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-01T17:23:14.258Z",
-    "end": "2026-10-01T17:23:44.174Z",
-    "duration": 29916,
+    "start": "2026-10-02T18:41:08.415Z",
+    "end": "2026-10-02T18:41:25.563Z",
+    "duration": 17148,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "23cf6379-e9ea-4427-a97b-db6256fd0022",
+      "uuid": "42d546cc-8231-4a17-b9d6-00c4cad8398c",
       "title": "",
       "fullFile": "cypress\\e2e\\login.cy.js",
       "file": "cypress\\e2e\\login.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "39d0126b-a9d3-48cd-982b-7409dc58d673",
+          "uuid": "c1b6bb68-a0aa-426b-bf4d-a61b87ea4d18",
           "title": "Smoke Test - Validação de Permissões de Acesso",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve validar o acesso à tela de Cadastro de Usuários",
               "fullTitle": "Smoke Test - Validação de Permissões de Acesso Deve validar o acesso à tela de Cadastro de Usuários",
               "timedOut": null,
-              "duration": 29698,
+              "duration": 16912,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "",
               "err": {},
-              "uuid": "e9c0a6e9-f522-4bc5-b461-98c59bd88f8c",
-              "parentUUID": "39d0126b-a9d3-48cd-982b-7409dc58d673",
+              "uuid": "3de938d7-3069-4980-889f-e8ae0a187382",
+              "parentUUID": "c1b6bb68-a0aa-426b-bf4d-a61b87ea4d18",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e9c0a6e9-f522-4bc5-b461-98c59bd88f8c"
+            "3de938d7-3069-4980-889f-e8ae0a187382"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 29698,
+          "duration": 16912,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

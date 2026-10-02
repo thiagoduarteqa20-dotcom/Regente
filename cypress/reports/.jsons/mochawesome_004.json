@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-01T17:18:03.096Z",
-    "end": "2026-10-01T17:19:18.928Z",
-    "duration": 75832,
+    "start": "2026-10-02T18:35:31.393Z",
+    "end": "2026-10-02T18:36:56.080Z",
+    "duration": 84687,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "65f645d3-751c-4a96-b02f-2063385c6af7",
+      "uuid": "60188eb2-4cd0-457d-9bdf-a6c1496cbe0d",
       "title": "",
       "fullFile": "cypress\\e2e\\icpConceitual.cy.js",
       "file": "cypress\\e2e\\icpConceitual.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "de0a93de-fb09-44c2-88c5-b0c46e7398d4",
+          "uuid": "c839b7c8-1b98-4d5e-8826-649c9ced8a3d",
           "title": "Smoke Test - ICP Conceitual",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "026e84bc-4975-4b66-b0f3-7e677303e529",
+              "uuid": "acd0a9dc-7a58-4b78-98cf-cd7cf635b87c",
               "title": "ICP Conceitual",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "Cadastrar ICP Conceitual - Criar Modelo Novo",
                   "fullTitle": "Smoke Test - ICP Conceitual ICP Conceitual Cadastrar ICP Conceitual - Criar Modelo Novo",
                   "timedOut": null,
-                  "duration": 39554,
+                  "duration": 47296,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -56,8 +56,8 @@
                   "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-tabela-preenchida.png\",\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-salvo.png\"\n    ]\n  ]\n}",
                   "code": "",
                   "err": {},
-                  "uuid": "d3721316-227a-4ddd-add4-c2c31122e97a",
-                  "parentUUID": "026e84bc-4975-4b66-b0f3-7e677303e529",
+                  "uuid": "a0372e4c-bd96-407a-9c2e-e87287e22b28",
+                  "parentUUID": "acd0a9dc-7a58-4b78-98cf-cd7cf635b87c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -65,7 +65,7 @@
                   "title": "Cadastrar ICP Conceitual - Utilizando Modelo Existente",
                   "fullTitle": "Smoke Test - ICP Conceitual ICP Conceitual Cadastrar ICP Conceitual - Utilizando Modelo Existente",
                   "timedOut": null,
-                  "duration": 20818,
+                  "duration": 21950,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -74,8 +74,8 @@
                   "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-tabela-preenchida.png\",\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-salvo.png\"\n    ]\n  ]\n}",
                   "code": "",
                   "err": {},
-                  "uuid": "28feb8f4-aa65-4c35-b86d-fc5516d86492",
-                  "parentUUID": "026e84bc-4975-4b66-b0f3-7e677303e529",
+                  "uuid": "ea1f029a-4513-4f23-b59c-ccddb551a9c8",
+                  "parentUUID": "acd0a9dc-7a58-4b78-98cf-cd7cf635b87c",
                   "isHook": false,
                   "skipped": false
                 },
@@ -83,7 +83,7 @@
                   "title": "Editar ICP Conceitual - Alterar valor da célula",
                   "fullTitle": "Smoke Test - ICP Conceitual ICP Conceitual Editar ICP Conceitual - Alterar valor da célula",
                   "timedOut": null,
-                  "duration": 14425,
+                  "duration": 14111,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -92,22 +92,22 @@
                   "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-dados-alterados.png\",\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-edicao-salva.png\"\n    ]\n  ]\n}",
                   "code": "",
                   "err": {},
-                  "uuid": "d7ae24b2-9695-48cf-b9e1-52ceea57091d",
-                  "parentUUID": "026e84bc-4975-4b66-b0f3-7e677303e529",
+                  "uuid": "6e12698d-b7a3-4f97-9dea-4a38c94b0c15",
+                  "parentUUID": "acd0a9dc-7a58-4b78-98cf-cd7cf635b87c",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "d3721316-227a-4ddd-add4-c2c31122e97a",
-                "28feb8f4-aa65-4c35-b86d-fc5516d86492",
-                "d7ae24b2-9695-48cf-b9e1-52ceea57091d"
+                "a0372e4c-bd96-407a-9c2e-e87287e22b28",
+                "ea1f029a-4513-4f23-b59c-ccddb551a9c8",
+                "6e12698d-b7a3-4f97-9dea-4a38c94b0c15"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 74797,
+              "duration": 83357,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000

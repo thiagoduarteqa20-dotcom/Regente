@@ -12,5 +12,6 @@ import './jornadas'
 import './utilsjornadas'
 import './utilsoperacoes'
 import './utilshistorico'
+import './utilsrelatoriomedicao'
 //document o automatico
 import 'cypress-mochawesome-reporter/register';

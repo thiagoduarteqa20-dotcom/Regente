@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-01T17:32:25.258Z",
-    "end": "2026-10-01T17:33:03.498Z",
-    "duration": 38240,
+    "start": "2026-10-02T18:50:48.441Z",
+    "end": "2026-10-02T18:51:25.060Z",
+    "duration": 36619,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "77151486-e213-4dee-870d-dc5523bb4bb3",
+      "uuid": "a4efa112-6189-434c-aa71-76d240266750",
       "title": "",
       "fullFile": "cypress\\e2e\\operacao.cy.js",
       "file": "cypress\\e2e\\operacao.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f81eee65-5ac9-480f-8949-363979a77d0e",
+          "uuid": "b054c54f-ba1c-4c59-a1ea-7207f630373d",
           "title": "Fluxo da Aba de Operação em Jornadas",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve navegar pelas consultas operacionais e acessar o segmento selecionado",
               "fullTitle": "Fluxo da Aba de Operação em Jornadas Deve navegar pelas consultas operacionais e acessar o segmento selecionado",
               "timedOut": null,
-              "duration": 38086,
+              "duration": 36473,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\operacao.cy.js\\\\acesso-aba-operacao.png\",\n      \"\\\\operacao.cy.js\\\\operacao-visitas-tecnicos-legendas-selecionadas.png\",\n      \"\\\\operacao.cy.js\\\\operacao-jornadas-disponiveis-filtros-limpos.png\",\n      \"\\\\operacao.cy.js\\\\operacao-card-selecionado.png\",\n      \"\\\\operacao.cy.js\\\\operacao-segmento-acessado.png\"\n    ]\n  ]\n}",
               "code": "",
               "err": {},
-              "uuid": "808f9d0b-b228-4013-bd52-2f5dba8cf112",
-              "parentUUID": "f81eee65-5ac9-480f-8949-363979a77d0e",
+              "uuid": "e3cc6977-baff-4329-a727-89e1d3fb24c2",
+              "parentUUID": "b054c54f-ba1c-4c59-a1ea-7207f630373d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "808f9d0b-b228-4013-bd52-2f5dba8cf112"
+            "e3cc6977-baff-4329-a727-89e1d3fb24c2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 38086,
+          "duration": 36473,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

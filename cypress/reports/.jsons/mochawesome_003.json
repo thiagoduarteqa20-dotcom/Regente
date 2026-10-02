@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-01T17:17:20.363Z",
-    "end": "2026-10-01T17:17:58.996Z",
-    "duration": 38633,
+    "start": "2026-10-02T18:34:37.713Z",
+    "end": "2026-10-02T18:35:26.302Z",
+    "duration": 48589,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "21f68ad7-210c-425a-bce4-d43d4cfe2686",
+      "uuid": "cf631d69-a5b1-479f-a0c0-55415ba2e299",
       "title": "",
       "fullFile": "cypress\\e2e\\historico.cy.js",
       "file": "cypress\\e2e\\historico.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "48bc3db6-58c8-4fad-8b8b-f4ca8f051cbd",
+          "uuid": "19d121f5-8cf2-4b87-a2ad-b9cfb29ff6f1",
           "title": "Fluxo da Aba de Histórico em Jornadas",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve navegar pelas etapas do histórico, limpando filtros e acessando o segmento selecionado",
               "fullTitle": "Fluxo da Aba de Histórico em Jornadas Deve navegar pelas etapas do histórico, limpando filtros e acessando o segmento selecionado",
               "timedOut": null,
-              "duration": 38260,
+              "duration": 48298,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\historico.cy.js\\\\acesso-aba-historico.png\",\n      \"\\\\historico.cy.js\\\\historico-filtros-limpos-nivel-1.png\",\n      \"\\\\historico.cy.js\\\\historico-rg-card-selecionado.png\",\n      \"\\\\historico.cy.js\\\\historico-filtros-limpos-nivel-2.png\",\n      \"\\\\historico.cy.js\\\\historico-item-cardview-selecionado.png\",\n      \"\\\\historico.cy.js\\\\historico-filtros-limpos-nivel-3.png\",\n      \"\\\\historico.cy.js\\\\historico-segmento-acessado.png\"\n    ]\n  ]\n}",
               "code": "",
               "err": {},
-              "uuid": "2782f513-aa7d-47a1-af82-bb7db0ff308a",
-              "parentUUID": "48bc3db6-58c8-4fad-8b8b-f4ca8f051cbd",
+              "uuid": "3ad59855-c2f6-419b-be46-1f0022ae34d4",
+              "parentUUID": "19d121f5-8cf2-4b87-a2ad-b9cfb29ff6f1",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2782f513-aa7d-47a1-af82-bb7db0ff308a"
+            "3ad59855-c2f6-419b-be46-1f0022ae34d4"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 38260,
+          "duration": 48298,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

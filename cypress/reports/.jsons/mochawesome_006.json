@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-01T17:21:39.677Z",
-    "end": "2026-10-01T17:23:02.725Z",
-    "duration": 83048,
+    "start": "2026-10-02T18:39:38.766Z",
+    "end": "2026-10-02T18:41:02.893Z",
+    "duration": 84127,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2b5645f7-0561-4704-8d2f-a8b8bf9245aa",
+      "uuid": "dcc745b9-5304-44f6-9a23-cb2f078636bb",
       "title": "",
       "fullFile": "cypress\\e2e\\jornada.cy.js",
       "file": "cypress\\e2e\\jornada.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c99ee065-56fd-420c-9600-17a15a123453",
+          "uuid": "de3c0680-aa24-472c-932c-830f5d7fa9f7",
           "title": "Testes de Regressão - Módulo de Jornadas",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve criar, editar e excluir uma Jornada com sucesso",
               "fullTitle": "Testes de Regressão - Módulo de Jornadas Deve criar, editar e excluir uma Jornada com sucesso",
               "timedOut": null,
-              "duration": 82263,
+              "duration": 83893,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\jornada.cy.js\\\\jornada-dados-preenchidos.png\",\n      \"\\\\jornada.cy.js\\\\jornada-salva-com-sucesso.png\",\n      \"\\\\jornada.cy.js\\\\jornada-dados-alterados.png\",\n      \"\\\\jornada.cy.js\\\\jornada-edicao-salva.png\",\n      \"\\\\jornada.cy.js\\\\jornada-confirmar-exclusao.png\",\n      \"\\\\jornada.cy.js\\\\jornada-excluida-com-sucesso.png\"\n    ]\n  ]\n}",
               "code": "",
               "err": {},
-              "uuid": "f19681e3-70f2-4a5e-82fe-9d5a4c37754b",
-              "parentUUID": "c99ee065-56fd-420c-9600-17a15a123453",
+              "uuid": "2db18370-7ba1-42d3-906f-30d524a5bd2d",
+              "parentUUID": "de3c0680-aa24-472c-932c-830f5d7fa9f7",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f19681e3-70f2-4a5e-82fe-9d5a4c37754b"
+            "2db18370-7ba1-42d3-906f-30d524a5bd2d"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 82263,
+          "duration": 83893,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

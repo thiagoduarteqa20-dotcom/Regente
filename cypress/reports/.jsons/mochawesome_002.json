@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-10-01T17:16:34.836Z",
-    "end": "2026-10-01T17:17:16.506Z",
-    "duration": 41670,
+    "start": "2026-10-02T18:33:50.640Z",
+    "end": "2026-10-02T18:34:33.714Z",
+    "duration": 43074,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "fee1d8a0-b9ee-4d0e-a277-b8bca63cc2a0",
+      "uuid": "6d2d6b2d-984a-4140-a435-b2574a317af4",
       "title": "",
       "fullFile": "cypress\\e2e\\ciclo.cy.js",
       "file": "cypress\\e2e\\ciclo.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5bc112ba-84b9-4f44-a574-50f66ca99343",
+          "uuid": "383e88c6-2fcf-4b9e-9d9c-00bf38a93dc2",
           "title": "Smoke Test - Ciclos",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "516a6211-e60b-494c-afba-e423cc12efde",
+              "uuid": "537f0ba8-b25e-435d-ba53-ef6fa47a747e",
               "title": "Ciclos",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "Cadastrar Novo Ciclo com Sucesso",
                   "fullTitle": "Smoke Test - Ciclos Ciclos Cadastrar Novo Ciclo com Sucesso",
                   "timedOut": null,
-                  "duration": 20082,
+                  "duration": 21743,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -56,8 +56,8 @@
                   "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\ciclo.cy.js\\\\ciclo-formulario-preenchido.png\",\n      \"\\\\ciclo.cy.js\\\\ciclo-cadastrado-com-sucesso.png\"\n    ]\n  ]\n}",
                   "code": "",
                   "err": {},
-                  "uuid": "9aa6a90f-5c10-49ef-813d-f440ddbe8795",
-                  "parentUUID": "516a6211-e60b-494c-afba-e423cc12efde",
+                  "uuid": "e1dd8f2b-34c3-43e6-839c-59b717eb0e26",
+                  "parentUUID": "537f0ba8-b25e-435d-ba53-ef6fa47a747e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -65,7 +65,7 @@
                   "title": "Editar Último Ciclo com Sucesso",
                   "fullTitle": "Smoke Test - Ciclos Ciclos Editar Último Ciclo com Sucesso",
                   "timedOut": null,
-                  "duration": 10573,
+                  "duration": 10489,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -74,8 +74,8 @@
                   "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\ciclo.cy.js\\\\ciclo-editado-com-sucesso.png\"\n    ]\n  ]\n}",
                   "code": "",
                   "err": {},
-                  "uuid": "32827d6a-271f-40b9-87a0-d1186456d3df",
-                  "parentUUID": "516a6211-e60b-494c-afba-e423cc12efde",
+                  "uuid": "4703fffc-edff-444c-b8cd-ddd3b0ae9595",
+                  "parentUUID": "537f0ba8-b25e-435d-ba53-ef6fa47a747e",
                   "isHook": false,
                   "skipped": false
                 },
@@ -83,7 +83,7 @@
                   "title": "Deletar Último Ciclo com Sucesso",
                   "fullTitle": "Smoke Test - Ciclos Ciclos Deletar Último Ciclo com Sucesso",
                   "timedOut": null,
-                  "duration": 10477,
+                  "duration": 10182,
                   "state": "passed",
                   "speed": "slow",
                   "pass": true,
@@ -92,22 +92,22 @@
                   "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\ciclo.cy.js\\\\ciclo-deletado-com-sucesso.png\"\n    ]\n  ]\n}",
                   "code": "",
                   "err": {},
-                  "uuid": "21f05a5f-b77b-41c9-9be0-2fe649e4a907",
-                  "parentUUID": "516a6211-e60b-494c-afba-e423cc12efde",
+                  "uuid": "90d0e2cf-2ac3-4c56-a632-4eff0e90ab56",
+                  "parentUUID": "537f0ba8-b25e-435d-ba53-ef6fa47a747e",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "9aa6a90f-5c10-49ef-813d-f440ddbe8795",
-                "32827d6a-271f-40b9-87a0-d1186456d3df",
-                "21f05a5f-b77b-41c9-9be0-2fe649e4a907"
+                "e1dd8f2b-34c3-43e6-839c-59b717eb0e26",
+                "4703fffc-edff-444c-b8cd-ddd3b0ae9595",
+                "90d0e2cf-2ac3-4c56-a632-4eff0e90ab56"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 41132,
+              "duration": 42414,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
