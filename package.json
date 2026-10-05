@@ -10,6 +10,7 @@
   "keywords": [],
   "author": "Tiago Duarte",
   "license": "MIT",
+  "type": "commonjs",
   "devDependencies": {
     "cypress": "^15.17.0",
     "cypress-mochawesome-reporter": "^5.0.0"
