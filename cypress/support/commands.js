@@ -1,5 +1,5 @@
 Cypress.Commands.add('sessionLogin', () => {
-    cy.visit('/')
+    cy.visit('https://dev.regente.tec.br/ords/r/regente/portal/login?tz=-3:00')
     cy.get('#P9999_USERNAME').type('tiagoduarte.7@seven.online')
     cy.get('input[placeholder="Senha"]').type('Seven@123')
     cy.contains('button', 'Entrar').click()

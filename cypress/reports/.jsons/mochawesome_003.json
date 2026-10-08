@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-08T20:38:40.454Z",
+    "end": "2026-10-08T20:39:08.186Z",
+    "duration": 27732,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e67af1f9-1a01-4444-8e84-cd4654b4d95b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\historico.cy.js",
+      "file": "cypress\\e2e\\historico.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5dd97ac1-f217-4fee-9242-fe5c825b5d67",
+          "title": "Fluxo da Aba de Histórico em Jornadas",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve navegar pelas etapas do histórico",
+              "fullTitle": "Fluxo da Aba de Histórico em Jornadas Deve navegar pelas etapas do histórico",
+              "timedOut": null,
+              "duration": 27572,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\historico.cy.js\\\\acesso-aba-historico.png\",\n      \"\\\\historico.cy.js\\\\historico-pesquisa-nivel-1.png\",\n      \"\\\\historico.cy.js\\\\historico-rg-card-selecionado.png\",\n      \"\\\\historico.cy.js\\\\historico-nivel-2-pronto.png\",\n      \"\\\\historico.cy.js\\\\historico-item-cardview-selecionado.png\",\n      \"\\\\historico.cy.js\\\\historico-nivel-3-pronto.png\",\n      \"\\\\historico.cy.js\\\\historico-segmento-acessado.png\"\n    ]\n  ]\n}",
+              "code": "",
+              "err": {},
+              "uuid": "dfa71ede-aed7-43d4-96d5-6397567a9b10",
+              "parentUUID": "5dd97ac1-f217-4fee-9242-fe5c825b5d67",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dfa71ede-aed7-43d4-96d5-6397567a9b10"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 27572,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "code": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

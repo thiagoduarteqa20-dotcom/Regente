@@ -5,7 +5,7 @@ describe('Fluxo da Aba de Histórico em Jornadas', () => {
             cy.contains('Pavimentos').click();
         });
 
-    it('Deve navegar pelas etapas do histórico, limpando filtros e acessando o segmento selecionado', () => {
+    it('Deve navegar pelas etapas do histórico', () => {
 
         cy.acessarHistorico();
         cy.acessarCardRgHistorico();
