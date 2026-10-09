@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-09T20:24:12.360Z",
+    "end": "2026-10-09T20:26:31.444Z",
+    "duration": 139084,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ca35a494-e03f-4bf8-a157-573e2e75bad0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\icpConceitual.cy.js",
+      "file": "cypress\\e2e\\icpConceitual.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "11ce4e08-6862-4c0f-8081-c627c33cf4d0",
+          "title": "Smoke Test - ICP Conceitual",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "da9a0b1a-2584-4336-837b-073deeaac8b6",
+              "title": "ICP Conceitual",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Cadastrar ICP Conceitual - Criar Modelo Novo",
+                  "fullTitle": "Smoke Test - ICP Conceitual ICP Conceitual Cadastrar ICP Conceitual - Criar Modelo Novo",
+                  "timedOut": null,
+                  "duration": 36151,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-tabela-preenchida.png\",\n      \"\\\\icpConceitual.cy.js\\\\Smoke Test - ICP Conceitual -- ICP Conceitual -- Cadastrar ICP Conceitual - Criar Modelo Novo (failed).png\"\n    ],\n    [\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-tabela-preenchida (attempt 2).png\",\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-salvo (attempt 2).png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "a27424d9-a3b9-4648-a3b3-a5f9d2b114cf",
+                  "parentUUID": "da9a0b1a-2584-4336-837b-073deeaac8b6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Cadastrar ICP Conceitual - Utilizando Modelo Existente",
+                  "fullTitle": "Smoke Test - ICP Conceitual ICP Conceitual Cadastrar ICP Conceitual - Utilizando Modelo Existente",
+                  "timedOut": null,
+                  "duration": 21263,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-tabela-preenchida.png\",\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-salvo.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "0358d621-1af4-429f-b049-b1ab4b0baa28",
+                  "parentUUID": "da9a0b1a-2584-4336-837b-073deeaac8b6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Editar ICP Conceitual - Alterar valor da célula",
+                  "fullTitle": "Smoke Test - ICP Conceitual ICP Conceitual Editar ICP Conceitual - Alterar valor da célula",
+                  "timedOut": null,
+                  "duration": 14747,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-dados-alterados.png\",\n      \"\\\\icpConceitual.cy.js\\\\icp-conceitual-edicao-salva.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "a5211fed-b541-492a-b9ac-ea9ffb294be4",
+                  "parentUUID": "da9a0b1a-2584-4336-837b-073deeaac8b6",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a27424d9-a3b9-4648-a3b3-a5f9d2b114cf",
+                "0358d621-1af4-429f-b049-b1ab4b0baa28",
+                "a5211fed-b541-492a-b9ac-ea9ffb294be4"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 72161,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "code": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

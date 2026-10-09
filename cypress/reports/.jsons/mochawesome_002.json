@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-10-09T20:22:44.943Z",
+    "end": "2026-10-09T20:23:32.564Z",
+    "duration": 47621,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aa4c2cf4-2623-49eb-ad46-7c90f3b6a11b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ciclo.cy.js",
+      "file": "cypress\\e2e\\ciclo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "62b7801b-4976-48e7-9842-c6ee07398976",
+          "title": "Smoke Test - Ciclos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "6addd1f5-eac4-45d8-a5a8-32e06bbf8402",
+              "title": "Ciclos",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Cadastrar Novo Ciclo com Sucesso",
+                  "fullTitle": "Smoke Test - Ciclos Ciclos Cadastrar Novo Ciclo com Sucesso",
+                  "timedOut": null,
+                  "duration": 26302,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\ciclo.cy.js\\\\ciclo-formulario-preenchido.png\",\n      \"\\\\ciclo.cy.js\\\\ciclo-cadastrado-com-sucesso.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "36e2ebd0-5b7e-4802-8e15-7e40869eff6b",
+                  "parentUUID": "6addd1f5-eac4-45d8-a5a8-32e06bbf8402",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Editar Último Ciclo com Sucesso",
+                  "fullTitle": "Smoke Test - Ciclos Ciclos Editar Último Ciclo com Sucesso",
+                  "timedOut": null,
+                  "duration": 10518,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\ciclo.cy.js\\\\ciclo-editado-com-sucesso.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "33cadf5e-a144-40bd-9270-0ee9d75f7fa1",
+                  "parentUUID": "6addd1f5-eac4-45d8-a5a8-32e06bbf8402",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deletar Último Ciclo com Sucesso",
+                  "fullTitle": "Smoke Test - Ciclos Ciclos Deletar Último Ciclo com Sucesso",
+                  "timedOut": null,
+                  "duration": 10041,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\ciclo.cy.js\\\\ciclo-deletado-com-sucesso.png\"\n    ]\n  ]\n}",
+                  "code": "",
+                  "err": {},
+                  "uuid": "4fd86210-1288-4aba-a25f-57f747628dbb",
+                  "parentUUID": "6addd1f5-eac4-45d8-a5a8-32e06bbf8402",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "36e2ebd0-5b7e-4802-8e15-7e40869eff6b",
+                "33cadf5e-a144-40bd-9270-0ee9d75f7fa1",
+                "4fd86210-1288-4aba-a25f-57f747628dbb"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 46861,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": false
+      },
+      "version": "8.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "code": false,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
