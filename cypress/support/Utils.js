@@ -1696,105 +1696,121 @@ Cypress.Commands.add('editarUltimaMatrizIcpIdade', () => {
 });
 // SELECIONAR TODOS - MATRIZ ICP IDADE
 Cypress.Commands.add('selecionarTodosMatrizIcpIdade', () => {
-    cy.log('Aguardando a Grid da Matriz ICP Idade...');
+    cy.log('Procurando a Grid da Matriz ICP Idade...');
 
+    const seletorGrid = '.a-GV, tr.a-GV-row';
     const seletorCheckbox = [
         '[aria-label="Select All Rows"]',
         '.a-GV-headerCheckbox',
         'th.a-GV-header--selection input',
-        'th.a-GV-header--selection',
-        '[role="checkbox"][aria-label*="Select All"]'
+        'th.a-GV-header--selection'
     ].join(', ');
 
-    // Aguarda a grade aparecer em algum iframe
-    cy.get('iframe', { timeout: 30000 })
-        .should(($iframes) => {
-            const encontrouGrid = [...$iframes].some((iframe) => {
-                try {
-                    const doc = iframe.contentDocument;
+    // Procura recursivamente na página e em todos os iframes.
+    const obterDocumentos = (documentoPrincipal) => {
+        const documentos = [];
+        const visitados = new Set();
 
-                    return doc &&
-                        doc.body &&
-                        doc.querySelector('.a-GV');
+        const percorrer = (doc) => {
+            if (!doc || visitados.has(doc)) return;
+
+            visitados.add(doc);
+            documentos.push(doc);
+
+            Array.from(doc.querySelectorAll('iframe')).forEach((iframe) => {
+                try {
+                    percorrer(iframe.contentDocument);
                 } catch (e) {
-                    return false;
+                    // Ignora iframes inacessíveis.
                 }
             });
+        };
 
-            expect(
-                encontrouGrid,
-                'Grid da Matriz ICP Idade carregada'
-            ).to.be.true;
-        })
-        .then(($iframes) => {
-            // Identifica o iframe que contém a grade
-            const iframeEncontrado = [...$iframes].find((iframe) => {
-                try {
-                    return iframe.contentDocument?.querySelector('.a-GV');
-                } catch (e) {
-                    return false;
-                }
+        percorrer(documentoPrincipal);
+        return documentos;
+    };
+
+    const gridExiste = (doc) => {
+        return obterDocumentos(doc).some((documento) =>
+            documento.querySelector(seletorGrid)
+        );
+    };
+
+    // Aguarda a grade aparecer, inclusive em iframe aninhado.
+    cy.document().should((doc) => {
+        expect(
+            gridExiste(doc),
+            'Grid da Matriz ICP Idade carregada'
+        ).to.be.true;
+    });
+
+    cy.document().then((doc) => {
+        const documentos = obterDocumentos(doc);
+
+        let checkboxEncontrado = null;
+        let gridEncontrada = null;
+
+        // Primeiro tenta localizar o checkbox de seleção.
+        for (const documento of documentos) {
+            const elementos = Array.from(
+                documento.querySelectorAll(seletorCheckbox)
+            );
+
+            checkboxEncontrado = elementos.find((elemento) => {
+                const estilo =
+                    documento.defaultView.getComputedStyle(elemento);
+
+                const retangulo = elemento.getBoundingClientRect();
+
+                return estilo.display !== 'none' &&
+                    estilo.visibility !== 'hidden' &&
+                    retangulo.width > 0 &&
+                    retangulo.height > 0;
             });
 
-            expect(
-                iframeEncontrado,
-                'Iframe contendo a Grid da Matriz ICP Idade'
-            ).to.exist;
+            if (checkboxEncontrado) break;
+        }
 
-            const doc = iframeEncontrado.contentDocument;
-            const win = iframeEncontrado.contentWindow;
+        if (checkboxEncontrado) {
+            cy.wrap(checkboxEncontrado)
+                .should('be.visible')
+                .click({ force: true });
 
-            const $apex = win.apex && win.apex.jQuery
-                ? win.apex.jQuery
-                : win.jQuery;
+            cy.log('Checkbox de seleção localizado e clicado.');
+        } else {
+            // Alternativa: seleciona pela API da Grid APEX.
+            for (const documento of documentos) {
+                gridEncontrada = documento.querySelector('.a-GV');
 
-            expect(
-                $apex,
-                'jQuery do iframe disponível'
-            ).to.exist;
-
-            const $body = $apex(doc.body);
-
-            // Primeiro tenta encontrar o controle visual de seleção
-            const $checkbox = $body
-                .find(seletorCheckbox)
-                .filter(':visible')
-                .first();
-
-            if ($checkbox.length > 0) {
-                cy.wrap($checkbox)
-                    .should('be.visible')
-                    .click({ force: true });
-
-                cy.log('Seleção realizada pelo controle da grade.');
-            } else {
-                // Alternativa: utilizar a API oficial da Grid APEX
-                cy.log(
-                    'Checkbox não encontrado. Tentando selecionar pela API da Grid APEX...'
-                );
-
-                const $grid = $body.find('.a-GV').first();
-
-                let selecionou = false;
-
-                try {
-                    if (
-                        $grid.length > 0 &&
-                        typeof $grid.grid === 'function'
-                    ) {
-                        $grid.grid('selectAll');
-                        selecionou = true;
-                    }
-                } catch (e) {
-                    cy.log(`Erro na seleção pela API: ${e.message}`);
-                }
-
-                expect(
-                    selecionou,
-                    'Não foi possível selecionar as linhas da Grid. Verifique se a seleção múltipla está habilitada no APEX.'
-                ).to.be.true;
+                if (gridEncontrada) break;
             }
-        });
+
+            expect(
+                gridEncontrada,
+                'Elemento da Grid APEX encontrado'
+            ).to.exist;
+
+            const janela = gridEncontrada.ownerDocument.defaultView;
+            const apex = janela.apex;
+
+            expect(apex, 'APEX disponível na janela da Grid').to.exist;
+            expect(
+                apex.jQuery,
+                'jQuery do APEX disponível'
+            ).to.be.a('function');
+
+            const $grid = apex.jQuery(gridEncontrada);
+
+            expect(
+                $grid.grid,
+                'API da Grid APEX disponível'
+            ).to.be.a('function');
+
+            $grid.grid('selectAll');
+
+            cy.log('Seleção realizada pela API da Grid APEX.');
+        }
+    });
 
     cy.wait(500);
 });
