@@ -1534,25 +1534,42 @@ Cypress.Commands.add('preencherValoresMatrizIcpIdade', () => {
     cy.printPasso('matriz-icp-idade-preenchida');
 });
 
-// PRÓXIMO
+// PRÓXIMO - AGUARDA O ENVIO DO FORMULÁRIO APEX
 Cypress.Commands.add('proximoMatrizIcpIdade', () => {
-    cy.get('iframe', { timeout: 30000 })
-        .then(($iframes) => {
-            const iframeEncontrado = [...$iframes].find((iframe) => {
-                try {
-                    const doc = iframe.contentDocument;
+    cy.log('Aguardando botão NEXT da Matriz ICP Idade...');
 
-                    return doc &&
-                        doc.querySelector('button[data-otel-label="NEXT"]');
+    // Registra a requisição antes de clicar no botão.
+    cy.intercept({
+        method: 'POST',
+        url: '**/wwv_flow.accept*'
+    }).as('avancarMatrizIcpIdade');
+
+    cy.get('iframe', { timeout: 30000 })
+        .should(($iframes) => {
+            const encontrado = [...$iframes].some((iframe) => {
+                try {
+                    return iframe.contentDocument?.querySelector(
+                        'button[data-otel-label="NEXT"]'
+                    );
                 } catch (e) {
                     return false;
                 }
             });
 
-            expect(
-                iframeEncontrado,
-                'Iframe com botão Next'
-            ).to.exist;
+            expect(encontrado, 'Botão NEXT dentro do iframe').to.be.true;
+        })
+        .then(($iframes) => {
+            const iframeEncontrado = [...$iframes].find((iframe) => {
+                try {
+                    return iframe.contentDocument?.querySelector(
+                        'button[data-otel-label="NEXT"]'
+                    );
+                } catch (e) {
+                    return false;
+                }
+            });
+
+            expect(iframeEncontrado, 'Iframe com botão NEXT').to.exist;
 
             cy.wrap(iframeEncontrado.contentDocument.body)
                 .find('button[data-otel-label="NEXT"]')
@@ -1560,6 +1577,11 @@ Cypress.Commands.add('proximoMatrizIcpIdade', () => {
                 .should('not.be.disabled')
                 .click({ force: true });
         });
+
+    // Aguarda o APEX concluir o envio antes de prosseguir.
+    cy.wait('@avancarMatrizIcpIdade', { timeout: 60000 });
+
+    cy.log('Requisição NEXT concluída.');
 });
 
 // FINALIZAR
@@ -1696,7 +1718,7 @@ Cypress.Commands.add('editarUltimaMatrizIcpIdade', () => {
 });
 // SELECIONAR TODOS - MATRIZ ICP IDADE
 Cypress.Commands.add('selecionarTodosMatrizIcpIdade', () => {
-    cy.log('Procurando a Grid da Matriz ICP Idade...');
+    cy.log('Aguardando a Grid da Matriz ICP Idade...');
 
     const seletorGrid = '.a-GV, tr.a-GV-row';
     const seletorCheckbox = [
@@ -1706,7 +1728,7 @@ Cypress.Commands.add('selecionarTodosMatrizIcpIdade', () => {
         'th.a-GV-header--selection'
     ].join(', ');
 
-    // Procura recursivamente na página e em todos os iframes.
+    // Pesquisa na página principal e nos iframes acessíveis.
     const obterDocumentos = (documentoPrincipal) => {
         const documentos = [];
         const visitados = new Set();
@@ -1730,89 +1752,58 @@ Cypress.Commands.add('selecionarTodosMatrizIcpIdade', () => {
         return documentos;
     };
 
-    const gridExiste = (doc) => {
-        return obterDocumentos(doc).some((documento) =>
+    // Aguarda até 30 segundos para a grade realmente aparecer.
+    cy.document({ timeout: 30000 }).should((doc) => {
+        const encontrou = obterDocumentos(doc).some((documento) =>
             documento.querySelector(seletorGrid)
         );
-    };
 
-    // Aguarda a grade aparecer, inclusive em iframe aninhado.
-    cy.document().should((doc) => {
         expect(
-            gridExiste(doc),
-            'Grid da Matriz ICP Idade carregada'
+            encontrou,
+            'Grid da Matriz ICP Idade carregada após NEXT'
         ).to.be.true;
     });
 
     cy.document().then((doc) => {
         const documentos = obterDocumentos(doc);
 
-        let checkboxEncontrado = null;
-        let gridEncontrada = null;
+        const documentoGrid = documentos.find((documento) =>
+            documento.querySelector('.a-GV')
+        );
 
-        // Primeiro tenta localizar o checkbox de seleção.
-        for (const documento of documentos) {
-            const elementos = Array.from(
-                documento.querySelectorAll(seletorCheckbox)
-            );
+        expect(
+            documentoGrid,
+            'Documento contendo a Grid da Matriz ICP Idade'
+        ).to.exist;
 
-            checkboxEncontrado = elementos.find((elemento) => {
-                const estilo =
-                    documento.defaultView.getComputedStyle(elemento);
+        const checkbox = Array.from(
+            documentoGrid.querySelectorAll(seletorCheckbox)
+        ).find((elemento) => {
+            const estilo =
+                documentoGrid.defaultView.getComputedStyle(elemento);
 
-                const retangulo = elemento.getBoundingClientRect();
+            const retangulo = elemento.getBoundingClientRect();
 
-                return estilo.display !== 'none' &&
-                    estilo.visibility !== 'hidden' &&
-                    retangulo.width > 0 &&
-                    retangulo.height > 0;
-            });
+            return estilo.display !== 'none' &&
+                estilo.visibility !== 'hidden' &&
+                retangulo.width > 0 &&
+                retangulo.height > 0;
+        });
 
-            if (checkboxEncontrado) break;
-        }
+        expect(
+            checkbox,
+            'Checkbox de seleção encontrado na Grid'
+        ).to.exist;
 
-        if (checkboxEncontrado) {
-            cy.wrap(checkboxEncontrado)
-                .should('be.visible')
-                .click({ force: true });
+        cy.wrap(checkbox)
+            .should('be.visible')
+            .click({ force: true });
 
-            cy.log('Checkbox de seleção localizado e clicado.');
-        } else {
-            // Alternativa: seleciona pela API da Grid APEX.
-            for (const documento of documentos) {
-                gridEncontrada = documento.querySelector('.a-GV');
-
-                if (gridEncontrada) break;
-            }
-
-            expect(
-                gridEncontrada,
-                'Elemento da Grid APEX encontrado'
-            ).to.exist;
-
-            const janela = gridEncontrada.ownerDocument.defaultView;
-            const apex = janela.apex;
-
-            expect(apex, 'APEX disponível na janela da Grid').to.exist;
-            expect(
-                apex.jQuery,
-                'jQuery do APEX disponível'
-            ).to.be.a('function');
-
-            const $grid = apex.jQuery(gridEncontrada);
-
-            expect(
-                $grid.grid,
-                'API da Grid APEX disponível'
-            ).to.be.a('function');
-
-            $grid.grid('selectAll');
-
-            cy.log('Seleção realizada pela API da Grid APEX.');
-        }
+        cy.log('Linhas selecionadas na Grid da Matriz ICP Idade.');
     });
 
     cy.wait(500);
+    cy.printPasso('matriz-icp-idade-selecionada');
 });
 
 // ==================== utilsnivelIcp.js ====================
