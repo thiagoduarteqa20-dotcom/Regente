@@ -1545,11 +1545,11 @@ Cypress.Commands.add('preencherValoresMatrizIcpIdade', () => {
     cy.printPasso('matriz-icp-idade-preenchida');
 });
 
-// PRÓXIMO (Atualizado com espera robusta para AJAX do APEX)
+// PRÓXIMO (Atualizado com suporte robusto a carregamento de dados existentes)
 Cypress.Commands.add('proximoMatrizIcpIdade', () => {
     cy.log('Avançando para próxima etapa...');
     
-    // Clica no botão NEXT dentro do iframe ativo
+    // 1. Clica no botão NEXT dentro do iframe ativo
     cy.get('iframe', { timeout: 30000 }).then(($iframes) => {
         const iframeEncontrado = [...$iframes].find((iframe) => {
             try {
@@ -1569,33 +1569,21 @@ Cypress.Commands.add('proximoMatrizIcpIdade', () => {
             .click({ force: true });
     });
 
-    // Pequeno respiro para garantir que a requisição POST do APEX foi disparada
-    cy.wait(800);
+    // 2. Respiro inicial para o APEX disparar a transição de tela
+    cy.wait(1200);
 
-    // Valida a chegada na próxima etapa com retry seguro ignorando estados de loading
-    cy.get('iframe', { timeout: 30000 }).should(($iframes) => {
-        const encontrado = [...$iframes].some((iframe) => {
-            try {
-                const doc = iframe.contentDocument;
-                if (!doc) return false;
+    // 3. Aguarda o iframe recarregar e valida se a grid ou o botão FINISH apareceu e o loading sumiu
+    cy.getMatrizIcpIdadeFrame().within(($body) => {
+        cy.wrap($body).should(($b) => {
+            const temConteudo = 
+                $b.find('tr.a-GV-row[data-rownum="1"]').length > 0 ||
+                $b.find('.a-GV-table').length > 0 ||
+                $b.find('button[data-otel-label="FINISH"]').length > 0;
+            
+            const estaCarregando = $b.find('.is-loading, .u-processing').length > 0;
 
-                // Se o APEX ainda estiver exibindo máscara de carregamento, descarta por ora
-                if (doc.querySelector('.is-loading, .u-processing')) {
-                    return false;
-                }
-
-                // Procura pela Grid da Matriz ou pelo botão FINISH da última etapa
-                return (
-                    doc.querySelector('tr.a-GV-row[data-rownum="1"]') ||
-                    doc.querySelector('.a-GV-table') ||
-                    doc.querySelector('button[data-otel-label="FINISH"]')
-                );
-            } catch (e) {
-                return false;
-            }
+            expect(temConteudo && !estaCarregando).to.be.true;
         });
-
-        expect(encontrado, 'Grade da Matriz ou botão FINISH carregado após NEXT').to.be.true;
     });
 });
 
