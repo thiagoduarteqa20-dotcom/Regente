@@ -1545,34 +1545,58 @@ Cypress.Commands.add('preencherValoresMatrizIcpIdade', () => {
     cy.printPasso('matriz-icp-idade-preenchida');
 });
 
-// PRÓXIMO
+// PRÓXIMO (Atualizado com espera robusta para AJAX do APEX)
 Cypress.Commands.add('proximoMatrizIcpIdade', () => {
-    cy.get('iframe', { timeout: 30000 })
-        .then(($iframes) => {
-            const iframeEncontrado = [...$iframes].find((iframe) => {
-                try {
-                    const doc = iframe.contentDocument;
+    cy.log('Avançando para próxima etapa...');
+    
+    // Clica no botão NEXT dentro do iframe ativo
+    cy.get('iframe', { timeout: 30000 }).then(($iframes) => {
+        const iframeEncontrado = [...$iframes].find((iframe) => {
+            try {
+                const doc = iframe.contentDocument;
+                return doc && doc.querySelector('button[data-otel-label="NEXT"]');
+            } catch (e) {
+                return false;
+            }
+        });
 
-                    return doc &&
-                        doc.querySelector(
-                            'button[data-otel-label="NEXT"]'
-                        );
-                } catch (e) {
+        expect(iframeEncontrado, 'Iframe com botão Next').to.exist;
+
+        cy.wrap(iframeEncontrado.contentDocument.body)
+            .find('button[data-otel-label="NEXT"]')
+            .should('be.visible')
+            .should('not.be.disabled')
+            .click({ force: true });
+    });
+
+    // Pequeno respiro para garantir que a requisição POST do APEX foi disparada
+    cy.wait(800);
+
+    // Valida a chegada na próxima etapa com retry seguro ignorando estados de loading
+    cy.get('iframe', { timeout: 30000 }).should(($iframes) => {
+        const encontrado = [...$iframes].some((iframe) => {
+            try {
+                const doc = iframe.contentDocument;
+                if (!doc) return false;
+
+                // Se o APEX ainda estiver exibindo máscara de carregamento, descarta por ora
+                if (doc.querySelector('.is-loading, .u-processing')) {
                     return false;
                 }
-            });
 
-            expect(
-                iframeEncontrado,
-                'Iframe com botão Next'
-            ).to.exist;
-
-            cy.wrap(iframeEncontrado.contentDocument.body)
-                .find('button[data-otel-label="NEXT"]')
-                .should('be.visible')
-                .should('not.be.disabled')
-                .click({ force: true });
+                // Procura pela Grid da Matriz ou pelo botão FINISH da última etapa
+                return (
+                    doc.querySelector('tr.a-GV-row[data-rownum="1"]') ||
+                    doc.querySelector('.a-GV-table') ||
+                    doc.querySelector('button[data-otel-label="FINISH"]')
+                );
+            } catch (e) {
+                return false;
+            }
         });
+
+        expect(encontrado, 'Grade da Matriz ou botão FINISH carregado após NEXT').to.be.true;
+    });
 });
 
 // FINALIZAR
