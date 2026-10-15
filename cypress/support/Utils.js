@@ -1590,7 +1590,7 @@ Cypress.Commands.add('proximoMatrizIcpIdade', () => {
 // FINALIZAR
 Cypress.Commands.add('finalizarMatrizIcpIdade', () => {
     cy.log('Finalizando Matriz ICP Idade...');
-    cy.wait(1500);
+    cy.wait(15000);
 
     cy.get('iframe', { timeout: 30000 })
         .should(($iframes) => {
