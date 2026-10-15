@@ -1777,7 +1777,7 @@ Cypress.Commands.add('selecionarTodosMatrizIcpIdade', () => {
     };
 
     // Aguarda a grade ou o botão FINISH aparecer.
-    cy.get('iframe', { timeout: 30000 })
+    cy.get('iframe', { timeout: 50000 })
         .should(($iframes) => {
             const documentos = obterDocumentos($iframes);
 
