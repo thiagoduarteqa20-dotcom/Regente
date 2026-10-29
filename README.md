@@ -1,9 +1,5 @@
 # Regente Automação
 
-Projeto de automação de testes da aplicação Regente utilizando **Cypress** e JavaScript.
-
-> **Observação:** este README foi criado com base no contexto do projeto. O arquivo ZIP disponibilizado contém apenas `cypress/support/Utils.js`; por isso, os comandos, dependências e a estrutura completa do projeto precisam ser confirmados no repositório.
-
 ## Objetivo
 
 Apoiar a execução de testes automatizados para validar funcionalidades da aplicação Regente, reduzir o esforço de testes repetitivos e facilitar a identificação de regressões.
